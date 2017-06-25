@@ -16,7 +16,7 @@ var peopleSchema = new Schema({
         ref: 'User'
     },
     person_code: {
-        type: String,
+        type: String
     },
     age_group: {
         type: String,
@@ -34,7 +34,6 @@ var peopleSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Items"
     }]
-
 });
 
 var People = mongoose.model("People", peopleSchema);
