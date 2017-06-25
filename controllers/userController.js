@@ -32,6 +32,8 @@ module.exports = {
             }).catch(function (err) {
                 res.json(err);
             });
+        }else{
+            res.json(false);
         }
     },
     updateMyInfo: function (req, res) {

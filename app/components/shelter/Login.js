@@ -23,7 +23,7 @@ var Login = React.createClass({
                 this._notificationSystem.addNotification({
                     message: 'Incorrect username/password',
                     level: 'error',
-                    position: 'tl'
+                    position: 'tr'
                 });
                 browserHistory.push('/shelter');
             } else {

@@ -22,7 +22,7 @@ app.use("/", routes);
 
 var db = "mongodb://localhost/givingGoodsApp";
 
-mongoose.connect(db, function(error) {
+mongoose.connect(db, function (error) {
   if (error) {
     console.error(error);
   }
@@ -32,6 +32,6 @@ mongoose.connect(db, function(error) {
 });
 
 // Start the server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("Now listening on port %s! Visit localhost:%s in your browser.", PORT, PORT);
 });
