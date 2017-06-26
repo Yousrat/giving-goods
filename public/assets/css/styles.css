@@ -1,0 +1,16 @@
+#people-list {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: left;
+    -webkit-justify-content: left;
+}
+
+.people-block {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff6f8;
+}

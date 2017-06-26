@@ -24,6 +24,8 @@ router.post("/new-people", peopleController.addPeople);
 router.get("/all-item-list", itemController.allItem);
 // Get all item to specific people
 router.get("/my-item-list", itemController.myItem);
+// Get item info by its id
+router.get("/item-info/:id", itemController.findItem);
 // Add new item
 router.post("/new-item", itemController.addItem);
 

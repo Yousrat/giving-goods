@@ -3,7 +3,7 @@ var People = require("../models/People");
 
 module.exports = {
     allItem: function (req, res) {
-        Item.find({}).populate({path : 'people_id', populate : {path : 'shelter_id'}}).then(function (doc) {
+        Item.find({}).populate({ path: 'people_id', populate: { path: 'shelter_id' } }).then(function (doc) {
             res.json(doc);
         }).catch(function (err) {
             res.json(err);
@@ -11,9 +11,17 @@ module.exports = {
     },
     myItem: function (req, res) {
         Item.find({}).populate({
-            path : 'people_id',
-            match: { _id: "594ff3e57bc6010d4e1ba1a4" }
+            path: 'people_id',
+            match: { _id: "" }
         }).then(function (doc) {
+            res.json(doc);
+        }).catch(function (err) {
+            res.json(err);
+        });
+    },
+    findItem: function (req, res) {
+        let id = req.params.id;
+        Item.findById(id).then(function (doc) {
             res.json(doc);
         }).catch(function (err) {
             res.json(err);
@@ -21,14 +29,14 @@ module.exports = {
     },
     addItem: function (req, res) {
         var result = {
-            people_id: "594ff3e57bc6010d4e1ba1a4",
+            people_id: "",
             item_name: "shoes",
             quantity: "1",
             item_status: 0,
             description: "size 7"
         };
         Item.create(result).then(function (doc) {
-            People.findOneAndUpdate({ '_id': "594ff3e57bc6010d4e1ba1a4" },              { $push: { "items": doc._id } }, { new: true }).then(function (doc) {
+            People.findOneAndUpdate({ '_id': "" }, { $push: { "items": doc._id } }, { new: true }).then(function (doc) {
                 res.json(doc);
             }).catch(function (err) {
                 res.json(err);
