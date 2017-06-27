@@ -44,5 +44,15 @@ module.exports = {
         }).catch(function (err) {
             res.json(err);
         });
+    },
+    findMyItemsIds:function(req,res){
+        var itemIdArray = req.query.idArray;
+        Item.find({
+            '_id': { $in: itemIdArray}
+        }).then(function (doc) {
+            res.json(doc);
+        }).catch(function (err) {
+            res.json(err);
+        });
     }
 };

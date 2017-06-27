@@ -6,9 +6,9 @@ import ShelterNavTab from "./ShelterNavTab";
 // import MyProfile from "./admin/MyProfile";
 // import AddUser from "./admin/AddUser";
 // import ManageUser from "./admin/ManageUser";
-// import ShelterProfile from "./admin/ShelterProfile";
-// import AddPeople from "./admin/AddPeople";
-// import ManagePeople from "./admin/ManagePeople";
+// import ShelterProfile from "./client/ShelterProfile";
+// import AddPeople from "./client/AddPeople";
+// import ManagePeople from "./client/ManagePeople";
 import { browserHistory } from 'react-router';
 
 var Profile = React.createClass({

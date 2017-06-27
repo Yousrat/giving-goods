@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 #banner{
 	height: 100px;
 
 }
-
 #about-us{
 	position: relative;
 	margin-top: 400px;
-=======
+}
+
 #people-list {
     display: flex;
     display: -webkit-flex;
@@ -23,5 +22,4 @@
     margin: 10px;
     padding: 10px;
     background-color: #fff6f8;
->>>>>>> 66a2ef4588be6695e490233db599cfd98785ea05
 }

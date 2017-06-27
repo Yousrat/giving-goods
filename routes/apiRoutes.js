@@ -26,6 +26,8 @@ router.get("/all-item-list", itemController.allItem);
 router.get("/my-item-list", itemController.myItem);
 // Get item info by its id
 router.get("/item-info/:id", itemController.findItem);
+// Get all my items
+router.get("/all-my-items", itemController.findMyItemsIds);
 // Add new item
 router.post("/new-item", itemController.addItem);
 
