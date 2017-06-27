@@ -35,15 +35,23 @@ var Login = React.createClass({
         return (
             <div className="row" id="login">
                 <NotificationSystem ref="notificationSystem" />
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <input type="text" placeholder="Enter email-id" className="form-control" id="username" onChange={this.handleChange} required />
+                <div className="col-md-6 col-md-offset-3">
+                    <div className=" panel panel-default">
+                        <div className="panel-body">
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="form-group">
+                                    <label htmlFor="username">Username</label>
+                                    <input type="text" placeholder="Enter email-id" className="form-control" id="username" onChange={this.handleChange} required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password">Password</label>
+                                    <input type="password" placeholder="Enter password" className="form-control" id="password" onChange={this.handleChange} required />
+                                </div>
+                                <button type="submit" className="btn btn-primary button-signin">Sign In</button>
+                            </form>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <input type="password" placeholder="Enter password" className="form-control" id="password" onChange={this.handleChange} required />
-                    </div>
-                    <button type="submit" className="btn btn-primary button-signin">Sign In</button>
-                </form>
+                </div>
             </div>
         );
     }
