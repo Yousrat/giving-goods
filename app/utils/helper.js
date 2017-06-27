@@ -31,8 +31,14 @@ const helper = {
         return false;
       });
   },
-  getUsers: function () {
+  getAllUsers: function () {
     return axios.get("/api/user-list");
+  },
+  getAllPeople: function () {
+    return axios.get("/api/all-people-list");
+  },
+  getItemInfo: function (itemId) {
+    return axios.get(`/api/item-info/${itemId}`);
   }
 };
 
