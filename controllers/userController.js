@@ -10,13 +10,10 @@ module.exports = {
     },
     addUser: function (req, res) {
         var result = {
-            role: "shelter",
-            privilege: 2,
-            emailId: "shelter1",
-            password: "shelter1",
-            name: "shelter1",
-            location: "san diego",
-            address: "xxxx ddddd"
+            role: req.body.role,
+            privilege: req.body.privilege,
+            emailId: req.body.emailId,
+            password: req.body.password
         };
         User.create(result).then(function (doc) {
             res.json(doc);
@@ -32,7 +29,7 @@ module.exports = {
             }).catch(function (err) {
                 res.json(err);
             });
-        }else{
+        } else {
             res.json(false);
         }
     },
@@ -40,11 +37,30 @@ module.exports = {
         if (req.user) {
             let userId = req.user._id;
             User.update({ _id: userId }, req.body)
+                .then(function (doc) {
+                    res.json(doc);
+                }).catch(function (err) {
+                    res.json(err);
+                });
+        }
+    },
+    suspendUser: function (req, res) {
+        let userId = req.body.id;
+        User.update({ _id: userId }, { privilege: 3 })
             .then(function (doc) {
                 res.json(doc);
             }).catch(function (err) {
                 res.json(err);
             });
-        }
     },
+    activateAcc: function (req, res) {
+        let userId = req.body.id;
+        let userPrivilege = req.body.privilege;
+        User.update({ _id: userId }, { privilege: userPrivilege })
+            .then(function (doc) {
+                res.json(doc);
+            }).catch(function (err) {
+                res.json(err);
+            });
+    }
 };

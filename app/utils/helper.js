@@ -49,6 +49,33 @@ const helper = {
         return false;
       });
   },
+  addNewUser: function (userInfo) {
+    return axios.post("/api/new-user", userInfo)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
+  suspendUser: function (userId) {
+    return axios.post("/api/suspend-user", userId)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
+  activateAcc: function (userData) {
+    return axios.post("/api/activate-acc", userData)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
   getAllUsers: function () {
     return axios.get("/api/user-list");
   },

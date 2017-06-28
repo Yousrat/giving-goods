@@ -12,6 +12,10 @@ router.post("/new-user", userController.addUser);
 router.get("/get-my-info", userController.getMyInfo);
 // Update logged in user info
 router.post("/update-my-info", userController.updateMyInfo);
+// Suspend a user
+router.post("/suspend-user", userController.suspendUser);
+// Activate a user account
+router.post("/activate-acc", userController.activateAcc);
 
 // Get all people
 router.get("/all-people-list", peopleController.allPeople);
