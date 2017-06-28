@@ -13,6 +13,24 @@ const helper = {
   logoutUser: function () {
     return axios.get("/logout");
   },
+  contactAdmin: function (senderData) {
+    return axios.post("/contact-admin", senderData)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
+  contactShelter: function (donorData) {
+    return axios.post("/contact-shelter", donorData)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
   getMyInfo: function () {
     return axios.get("/api/get-my-info")
       .then(function (response) {
