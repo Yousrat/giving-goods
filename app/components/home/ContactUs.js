@@ -3,11 +3,14 @@ var helpers = require("./../../utils/helper");
 var NotificationSystem = require('react-notification-system');
 
 var ContactUs = React.createClass({
-
+    _notificationSystem: null,
     handleChange: function (event) {
         var newState = {};
         newState[event.target.id] = event.target.value;
         this.setState(newState);
+    },
+    componentDidMount: function () {
+        this._notificationSystem = this.refs.notificationSystem;
     },
 
     handleSubmit: function (event) {
@@ -18,12 +21,18 @@ var ContactUs = React.createClass({
             clientMessage: this.state.clientMessage
         }).then((mailStatus) => {
             console.log(mailStatus);
+            this._notificationSystem.addNotification({
+                message: 'Message sent, we will get back to you shortly',
+                level: 'success',
+                position: 'tr'
+            });
         });
     },
 
     render: function () {
         return (
             <div className="row" id="contact-us">
+                <NotificationSystem ref="notificationSystem" />
                 <div className="col-md-6 col-md-offset-3">
                     <div className=" panel panel-default">
                         <div className="panel-body">
@@ -38,9 +47,10 @@ var ContactUs = React.createClass({
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="clientMessage">Message</label>
-                                    <textarea placeholder="Write your message here" className="form-control" id="clientMessage" onChange={this.handleChange} rows = "5" required />
+                                    <textarea placeholder="Write your message here" className="form-control" id="clientMessage" onChange={this.handleChange} rows="5" required />
                                 </div>
                                 <button type="submit" className="btn btn-primary">Send</button>
+
                             </form>
                         </div>
                     </div>
@@ -50,3 +60,5 @@ var ContactUs = React.createClass({
     }
 });
 module.exports = ContactUs;
+
+
