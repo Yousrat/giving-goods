@@ -3,9 +3,9 @@ var Link = require("react-router").Link;
 var helpers = require("./../../utils/helper");
 import AdminNavTab from "./AdminNavTab";
 import ShelterNavTab from "./ShelterNavTab";
-// import MyProfile from "./admin/MyProfile";
-// import AddUser from "./admin/AddUser";
-// import ManageUser from "./admin/ManageUser";
+import MyProfile from "./admin/MyProfile";
+import AddUser from "./admin/AddUser";
+import ManageUsers from "./admin/ManageUsers";
 // import ShelterProfile from "./client/ShelterProfile";
 // import AddPeople from "./client/AddPeople";
 // import ManagePeople from "./client/ManagePeople";
@@ -44,9 +44,9 @@ var Profile = React.createClass({
                 {this.renderLogout()}
                 <AdminNavTab />
                 <div className="tab-content">
-                    {/*<MyProfile myInfo={this.state.loggedInUser}/>*/}
-                    {/*<AddUser />*/}
-                    {/*<ManageUser />*/}
+                    <MyProfile myInfo={this.state.loggedInUser}/>
+                    <AddUser />
+                    <ManageUsers />
                 </div>
             </div>
         );
