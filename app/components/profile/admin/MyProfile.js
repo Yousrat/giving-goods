@@ -1,10 +1,10 @@
 var React = require("react");
 var helper = require("./../../../utils/helper");
-
+var NotificationSystem = require('react-notification-system');
 
 
 var MyProfile = React.createClass({
-
+    _notificationSystem: null,
     getInitialState: function () {
         return {
             name: this.props.myInfo.name,
@@ -14,7 +14,9 @@ var MyProfile = React.createClass({
             location: this.props.myInfo.location
         }
     },
-
+    componentDidMount: function () {
+        this._notificationSystem = this.refs.notificationSystem;
+    },
 
     handleChange: function (event) {
         var newState = {};
@@ -28,10 +30,17 @@ var MyProfile = React.createClass({
             location: this.state.newLocation,
             address: this.state.newAddress
         }).then((user) => {
-            this.setState({
-                name: this.state.newName,
-                location: this.state.newLocation,
-                address: this.state.newAddress
+            helper.default.getMyInfo().then((userUpdated) => {
+                this.setState({
+                    name: userUpdated.data.name,
+                    location: userUpdated.data.location,
+                    address: userUpdated.data.address
+                });
+                this._notificationSystem.addNotification({
+                    message: 'New information saved',
+                    level: 'success',
+                    position: 'tr'
+                });
             });
         });
     },
@@ -49,14 +58,17 @@ var MyProfile = React.createClass({
                                 <div className="form-group">
                                     <label htmlFor="newName">Name</label>
                                     <input type="text" defaultValue={this.state.name} className="form-control" id="newName" onChange={this.handleChange} required />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="newAddress">Address</label>
-                                    <input type="text" defaultValue={this.state.address} className="form-control" id="newAddress" onChange={this.handleChange} required />
+
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="newLocation">Location</label>
                                     <input type="text" defaultValue={this.state.location} className="form-control" id="newLocation" onChange={this.handleChange} required />
+
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="newAddress">Address</label>
+                                    <textarea defaultValue={this.state.address} className="form-control" id="newAddress" onChange={this.handleChange} rows = "3" required />
+
                                 </div>
                                 <button type="submit" className="btn btn-primary">Save</button>
                             </form>
@@ -73,6 +85,7 @@ var MyProfile = React.createClass({
     render: function () {
         return (
             <div id="my-profile" className="tab-pane fade in active">
+                <NotificationSystem ref="notificationSystem" />
                 <div className="row">
                     MyProfile
                     <p> {this.state.name} </p>
