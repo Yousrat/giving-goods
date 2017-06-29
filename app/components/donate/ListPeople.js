@@ -153,7 +153,7 @@ var ListPeople = React.createClass({
                         <p>{person.shelter_id.location}</p>
                         <p>Age: {person.age_group}</p>
                         <p>{person.gender}</p>
-                        <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.getPersonItems.bind(this, person)}>Expand</button>
+                        <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.getPersonItems.bind(this, person)}>More</button>
                         <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
                     </div>
                 );
