@@ -4,8 +4,10 @@ var AddUser = React.createClass({
     render: function () {
         return (
             <div id="add-user" className="tab-pane fade">
-                Add User
-    </div>
+                <div className="row">
+                    Add User
+                </div>
+            </div>
         );
     }
 });

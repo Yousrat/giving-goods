@@ -4,8 +4,10 @@ var ManageUsers = React.createClass({
     render: function () {
         return (
             <div id="manage-user" className="tab-pane fade">
-Manage Users
-</div>
+                <div className="row">
+                    ManageUsers
+                </div>
+            </div>
         );
     }
 });
