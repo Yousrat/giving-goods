@@ -6,7 +6,7 @@ import ShelterNavTab from "./ShelterNavTab";
 import MyProfile from "./admin/MyProfile";
 import AddUser from "./admin/AddUser";
 import ManageUsers from "./admin/ManageUsers";
-// import ShelterProfile from "./client/ShelterProfile";
+import ShelterProfile from "./client/ShelterProfile";
 // import AddPeople from "./client/AddPeople";
 // import ManagePeople from "./client/ManagePeople";
 import { browserHistory } from 'react-router';
@@ -57,9 +57,9 @@ var Profile = React.createClass({
                 {this.renderLogout()}
                 <ShelterNavTab />
                 <div className="tab-content">
-                    {/*<ShelterProfile shelterInfo={this.state.loggedInUser/>
-                    <AddPeople shelterId={this.state.loggedInUser._id/>
-                    <ManagePeople />*/}
+                    <ShelterProfile shelterInfo={this.state.loggedInUser}/>
+                    {/*<AddPeople shelterId={this.state.loggedInUser._id/>*/}
+                    {/*<ManagePeople />*/}
                 </div>
             </div>
         );
