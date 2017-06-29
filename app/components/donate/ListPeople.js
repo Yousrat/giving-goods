@@ -84,6 +84,7 @@ var ListPeople = React.createClass({
                         <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
                             <h4 className="modal-title">{this.state.currentPerson.person_first_name}</h4>
+                            <p>{this.state.currentPerson.gender + ", " + this.state.currentPerson.age_group + " years old"}</p>
                         </div>
                         <div className="modal-body">
                             <table className="table table-hover">
@@ -115,16 +116,13 @@ var ListPeople = React.createClass({
             shelterForm =
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="donorEmail">Email</label>
-                        <input type="email" placeholder="Enter your email-id" className="form-control" id="donorEmail" onChange={this.handleChange} required />
+                        <input type="email" placeholder="Your Email Address" className="form-control" id="donorEmail" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="donorSubject">Subject</label>
-                        <input type="text" placeholder="Enter subject" className="form-control" id="donorSubject" onChange={this.handleChange} required />
+                        <input type="text" placeholder="Subject" className="form-control" id="donorSubject" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="donorMessage">Message</label>
-                        <textarea className="form-control" rows="5" id="donorMessage" placeholder="Enter message" onChange={this.handleChange} required ></textarea>
+                        <textarea className="form-control" rows="5" id="donorMessage" placeholder="Message to Shelter" onChange={this.handleChange} required ></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
@@ -135,7 +133,7 @@ var ListPeople = React.createClass({
                     <div className="modal-content">
                         <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">Contact shelter</h4>
+                            <h4 className="modal-title">Contact Shelter</h4>
                         </div>
                         <div className="modal-body">
                             {shelterForm}
