@@ -9,7 +9,8 @@ var ListPeople = React.createClass({
         return {
             allPeopleList: [],
             currentPerson: [],
-            currentPersonItems: []
+            currentPersonItems: [],
+            contactCurrentShelter: null
         }
     },
 
@@ -20,11 +21,45 @@ var ListPeople = React.createClass({
         this._notificationSystem = this.refs.notificationSystem;
     },
 
+    handleChange: function (event) {
+        var newState = {};
+        newState[event.target.id] = event.target.value;
+        this.setState(newState);
+    },
+    
+    handleSubmit: function (event) {
+        event.preventDefault();
+        helper.default.contactShelter({
+            donorEmail: this.state.donorEmail,
+            donorSubject: this.state.donorSubject,
+            donorMessage: this.state.donorMessage,
+            shelterMail: this.state.contactCurrentShelter
+        }).then((mailStatus) => {
+            if (mailStatus.data) {
+                this._notificationSystem.addNotification({
+                    message: 'Mail sent',
+                    level: 'success',
+                    position: 'tr'
+                });
+            } else {
+                this._notificationSystem.addNotification({
+                    message: 'Mail NOT sent. Please try again later',
+                    level: 'error',
+                    position: 'tr'
+                });
+            }
+        });
+    },
+
     getPersonItems: function (person) {
         this.setState({ currentPerson: person });
         helper.default.findMyItemsIds(person.items).then(function (itemDetails) {
             this.setState({ currentPersonItems: itemDetails.data });
         }.bind(this));
+    },
+
+    contactShelter: function (shelter) {
+        this.setState({ contactCurrentShelter: shelter.emailId });
     },
 
     renderPersonModal: function () {
@@ -74,6 +109,43 @@ var ListPeople = React.createClass({
         );
     },
 
+    renderContactShelterModal: function () {
+        var shelterForm = "";
+        if (this.state.contactCurrentShelter !== null) {
+            shelterForm =
+                <form onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="donorEmail">Email</label>
+                        <input type="email" placeholder="Enter your email-id" className="form-control" id="donorEmail" onChange={this.handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="donorSubject">Subject</label>
+                        <input type="text" placeholder="Enter subject" className="form-control" id="donorSubject" onChange={this.handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="donorMessage">Message</label>
+                        <textarea className="form-control" rows="5" id="donorMessage" placeholder="Enter message" onChange={this.handleChange} required ></textarea>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
+        }
+        return (
+            <div id="contactModal" className="modal fade" role="dialog">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <h4 className="modal-title">Contact shelter</h4>
+                        </div>
+                        <div className="modal-body">
+                            {shelterForm}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    },
+
     renderPeople: function () {
         return this.state.allPeopleList.map((person, index) => {
             if (person.items.length) {
@@ -84,7 +156,7 @@ var ListPeople = React.createClass({
                         <p>Age: {person.age_group}</p>
                         <p>{person.gender}</p>
                         <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.getPersonItems.bind(this, person)}>Expand</button>
-                        <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#contactModal" onClick="">Contact Shelter</button>
+                        <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
                     </div>
                 );
             }
@@ -97,6 +169,7 @@ var ListPeople = React.createClass({
                 <NotificationSystem ref="notificationSystem" />
                 {this.renderPeople()}
                 {this.renderPersonModal()}
+                 {this.renderContactShelterModal()}
             </div>
         );
     }
