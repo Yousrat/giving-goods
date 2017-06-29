@@ -1,4 +1,5 @@
 var React = require("react");
+var helper = require("./../../utils/helper");
 
 var ListPeople = require("./ListPeople");
 var Search = require("./Search");
@@ -12,17 +13,18 @@ var Donate = React.createClass({
     },
 
     setQuery: function (location, item) {
-        helpers.runQuery(newQuery, newStart, newEnd).then(function (data) {
-            this.setState({ results: { docs: data.docs } });
-        }.bind(this));
+        this.setState({
+            searchLocation: location,
+            searchItem: item
+        });
     },
 
     render: function () {
         return (
             <div className="container">
                 <h1>Donate Goods</h1>
-                <Search />
-                <ListPeople />
+                <Search updateSearch={this.setQuery} />
+                <ListPeople searchLocation={this.state.searchLocation} />
             </div>
         );
     }
