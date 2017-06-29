@@ -14,7 +14,6 @@ var Search = React.createClass({
         var newState = {};
         newState[event.target.id] = event.target.value;
         this.setState(newState);
-        console.log(newState);
     },
 
     handleSubmit: function (event) {
@@ -29,11 +28,11 @@ var Search = React.createClass({
                 <h4>Search</h4>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <input type="text" placeholder="by Item" className="form-control" id="searchItem" onChange={this.handleChange} />
+                        <input type="text" placeholder="by Item" className="form-control" id="item" onChange={this.handleChange} />
                     </div>
                     <p>OR</p>
                     <div className="form-group">
-                        <input type="text" placeholder="by Location" className="form-control" id="searchLocation" onChange={this.handleChange} />
+                        <input type="text" placeholder="by Location" className="form-control" id="location" onChange={this.handleChange} />
                     </div>
                     <button type="submit" className="btn btn-default">Submit</button>
                 </form>
