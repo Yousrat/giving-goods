@@ -27,7 +27,7 @@ var Profile = React.createClass({
     },
     renderLogout: function () {
         return (
-             <Link to="/home" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"></span> Logout</Link>
+            <Link to="/home" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"></span> Logout</Link>
         );
     },
     renderWarning: function () {
@@ -44,7 +44,7 @@ var Profile = React.createClass({
                 {this.renderLogout()}
                 <AdminNavTab />
                 <div className="tab-content">
-                    <MyProfile myInfo={this.state.loggedInUser}/>
+                    <MyProfile myInfo={this.state.loggedInUser} />
                     <AddUser />
                     <ManageUsers />
                 </div>
@@ -57,8 +57,8 @@ var Profile = React.createClass({
                 {this.renderLogout()}
                 <ShelterNavTab />
                 <div className="tab-content">
-                    <ShelterProfile shelterInfo={this.state.loggedInUser}/>
-                    <AddPeople>
+                    <ShelterProfile shelterInfo={this.state.loggedInUser} />
+                    <AddPeople />
                     {/*<ManagePeople />*/}
                 </div>
             </div>
