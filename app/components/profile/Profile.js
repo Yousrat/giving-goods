@@ -7,7 +7,7 @@ import MyProfile from "./admin/MyProfile";
 import AddUser from "./admin/AddUser";
 import ManageUsers from "./admin/ManageUsers";
 import ShelterProfile from "./client/ShelterProfile";
-import AddPeople from "./client/AddPeople";
+// import AddPeople from "./client/AddPeople";
 // import ManagePeople from "./client/ManagePeople";
 import { browserHistory } from 'react-router';
 
@@ -58,7 +58,7 @@ var Profile = React.createClass({
                 <ShelterNavTab />
                 <div className="tab-content">
                     <ShelterProfile shelterInfo={this.state.loggedInUser}/>
-                    <AddPeople/>
+                    {/*<AddPeople/>*/}
                     {/*<ManagePeople />*/}
                 </div>
             </div>
