@@ -105,10 +105,13 @@ const helper = {
         return false;
       });
   },
+  findMyPeople:function () {
+    return axios.get("/api/my-people-list");
+  },
   getItemInfo: function (itemId) {
     return axios.get(`/api/item-info/${itemId}`);
   },
-  findMyItemsIds: function (itemIdArray) {
+  findItemsByIds: function (itemIdArray) {
     return axios.get('/api/all-my-items', {
       params: {
         idArray: itemIdArray
