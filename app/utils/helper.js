@@ -82,6 +82,20 @@ const helper = {
   getAllPeople: function () {
     return axios.get("/api/all-people-list");
   },
+  getPeopleByLocation: function (location) {
+    return axios.get('/api/people-by-location',{
+      params: {
+        location: location
+      }
+    });
+  },
+  getPeopleByItem: function (item) {
+    return axios.get('/api/people-by-item',{
+      params: {
+        item: item
+      }
+    });
+  },
   getItemInfo: function (itemId) {
     return axios.get(`/api/item-info/${itemId}`);
   },

@@ -23,6 +23,10 @@ router.get("/all-people-list", peopleController.allPeople);
 router.get("/my-people-list", peopleController.myPeople);
 // Add new people
 router.post("/new-people", peopleController.addPeople);
+// Get people by location
+router.get("/people-by-location", peopleController.peopleByLocation);
+// Get people by item
+router.get("/people-by-item", peopleController.peopleByItems);
 
 // Get all item
 router.get("/all-item-list", itemController.allItem);
