@@ -4,19 +4,16 @@ var Item = require("./../models/Item");
 
 module.exports = {
     allPeople: function (req, res) {
-        People.find({}).populate({
-            path: 'shelter_id'
-        }).then(function (doc) {
+        People.find({}).populate('shelter_id').populate('items').then(function (doc) {
             res.json(doc);
         }).catch(function (err) {
             res.json(err);
         });
     },
     myPeople: function (req, res) {
-        People.find({}).populate({
-            path: 'shelter_id',
-            match: { _id: "594fe4be4c080c0a9e4adfed" }
-        }).then(function (doc) {
+        People.find({
+            'shelter_id': req.user._id
+        }).populate('items').then(function (doc) {
             res.json(doc);
         }).catch(function (err) {
             res.json(err);
@@ -41,9 +38,7 @@ module.exports = {
     peopleByLocation: function (req, res) {
         var shelterIdArray = [];
         if (req.query.location === "All") {
-            People.find({}).populate({
-                path: 'shelter_id'
-            }).then(function (doc) {
+            People.find({}).populate('shelter_id').populate('items').then(function (doc) {
                 res.json(doc);
             }).catch(function (err) {
                 res.json(err);
@@ -55,9 +50,7 @@ module.exports = {
                 }
                 People.find({
                     'shelter_id': { $in: shelterIdArray }
-                }).populate({
-                    path: 'shelter_id'
-                }).then(function (doc) {
+                }).populate('shelter_id').populate('items').then(function (doc) {
                     res.json(doc);
                 }).catch(function (err) {
                     res.json(err);
@@ -69,9 +62,7 @@ module.exports = {
     },
     peopleByItems: function (req, res) {
         if (req.query.item === "") {
-            People.find({}).populate({
-                path: 'shelter_id'
-            }).then(function (doc) {
+            People.find({}).populate('shelter_id').populate('items').then(function (doc) {
                 res.json(doc);
             }).catch(function (err) {
                 res.json(err);
@@ -82,9 +73,7 @@ module.exports = {
             }).then(function (peopleIdArray) {
                 People.find({
                     '_id': { $in: peopleIdArray }
-                }).populate({
-                    path: 'shelter_id'
-                }).then(function (doc) {
+                }).populate('shelter_id').populate('items').then(function (doc) {
                     res.json(doc);
                 }).catch(function (err) {
                     res.json(err);

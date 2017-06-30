@@ -32,7 +32,7 @@ var peopleSchema = new Schema({
     },
     items: [{
         type: Schema.Types.ObjectId,
-        ref: "Items"
+        ref: "Item"
     }]
 });
 

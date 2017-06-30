@@ -46,11 +46,9 @@ var ListPeople = React.createClass({
             }
         });
     },
-    getPersonItems: function (person) {
+    setPersonItems: function (person) {
         this.setState({ currentPerson: person });
-        helper.default.findMyItemsIds(person.items).then(function (itemDetails) {
-            this.setState({ currentPersonItems: itemDetails.data });
-        }.bind(this));
+        this.setState({ currentPersonItems: person.items });
     },
     contactShelter: function (shelter) {
         this.setState({ contactCurrentShelter: shelter.emailId });
@@ -71,7 +69,6 @@ var ListPeople = React.createClass({
         return (
             <div id="personModal" className="modal fade" role="dialog">
                 <div className="modal-dialog">
-
                     <div className="modal-content">
                         <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
@@ -96,7 +93,6 @@ var ListPeople = React.createClass({
                             <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         );
@@ -144,7 +140,7 @@ var ListPeople = React.createClass({
                             <p>{person.shelter_id.location}</p>
                             <p>Age: {person.age_group}</p>
                             <p>{person.gender}</p>
-                            <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.getPersonItems.bind(this, person)}>More</button>
+                            <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
                             <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
                         </div>
                     );
