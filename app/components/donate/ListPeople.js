@@ -4,7 +4,6 @@ var helper = require("./../../utils/helper");
 
 var ListPeople = React.createClass({
     _notificationSystem: null,
-
     getInitialState: function () {
         return {
             allPeopleList: [],
@@ -13,20 +12,17 @@ var ListPeople = React.createClass({
             contactCurrentShelter: null
         }
     },
-
     componentDidMount: function () {
-        helper.default.getAllPeople().then(function (peopleList) {
-            this.setState({ allPeopleList: peopleList.data });
-        }.bind(this));
         this._notificationSystem = this.refs.notificationSystem;
     },
-
+    componentWillReceiveProps: function (nextProps) {
+        this.setState({ allPeopleList: nextProps.peopleList });
+    },
     handleChange: function (event) {
         var newState = {};
         newState[event.target.id] = event.target.value;
         this.setState(newState);
     },
-    
     handleSubmit: function (event) {
         event.preventDefault();
         helper.default.contactShelter({
@@ -50,22 +46,19 @@ var ListPeople = React.createClass({
             }
         });
     },
-
     getPersonItems: function (person) {
         this.setState({ currentPerson: person });
         helper.default.findMyItemsIds(person.items).then(function (itemDetails) {
             this.setState({ currentPersonItems: itemDetails.data });
         }.bind(this));
     },
-
     contactShelter: function (shelter) {
         this.setState({ contactCurrentShelter: shelter.emailId });
     },
-
     renderPersonModal: function () {
         var itemRows = "";
         if (this.state.currentPersonItems.length !== 0) {
-            itemRows = this.state.currentPersonItems.map((item,index) => {
+            itemRows = this.state.currentPersonItems.map((item, index) => {
                 return (
                     <tr key={index}>
                         <td>{item.item_name}</td>
@@ -75,7 +68,6 @@ var ListPeople = React.createClass({
                 );
             });
         }
-
         return (
             <div id="personModal" className="modal fade" role="dialog">
                 <div className="modal-dialog">
@@ -109,7 +101,6 @@ var ListPeople = React.createClass({
             </div>
         );
     },
-
     renderContactShelterModal: function () {
         var shelterForm = "";
         if (this.state.contactCurrentShelter !== null) {
@@ -143,31 +134,37 @@ var ListPeople = React.createClass({
             </div>
         );
     },
-
     renderPeople: function () {
-        return this.state.allPeopleList.map((person, index) => {
-            if (person.items.length) {
-                return (
-                    <div className="people-block" key={index}>
-                        <p>{person.person_first_name + " " + person.person_last_name}</p>
-                        <p>{person.shelter_id.location}</p>
-                        <p>Age: {person.age_group}</p>
-                        <p>{person.gender}</p>
-                        <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.getPersonItems.bind(this, person)}>More</button>
-                        <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
-                    </div>
-                );
-            }
-        });
+        if (this.state.allPeopleList.length !== 0) {
+            return this.state.allPeopleList.map((person, index) => {
+                if (person.items.length) {
+                    return (
+                        <div className="people-block" key={index}>
+                            <p>{person.person_first_name + " " + person.person_last_name}</p>
+                            <p>{person.shelter_id.location}</p>
+                            <p>Age: {person.age_group}</p>
+                            <p>{person.gender}</p>
+                            <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.getPersonItems.bind(this, person)}>More</button>
+                            <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
+                        </div>
+                    );
+                }
+            });
+        } else {
+            return (
+                <div >
+                    No result
+                </div>
+            );
+        }
     },
-
     render: function () {
         return (
             <div id="people-list">
                 <NotificationSystem ref="notificationSystem" />
                 {this.renderPeople()}
                 {this.renderPersonModal()}
-                 {this.renderContactShelterModal()}
+                {this.renderContactShelterModal()}
             </div>
         );
     }
