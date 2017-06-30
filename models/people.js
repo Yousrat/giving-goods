@@ -13,7 +13,8 @@ var peopleSchema = new Schema({
     },
     shelter_id: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     person_code: {
         type: String
@@ -27,8 +28,7 @@ var peopleSchema = new Schema({
         required: true
     },
     notes: {
-        type: String,
-        required: true
+        type: String
     },
     items: [{
         type: Schema.Types.ObjectId,

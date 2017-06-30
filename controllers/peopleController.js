@@ -23,16 +23,16 @@ module.exports = {
         });
     },
     addPeople: function (req, res) {
-        var result = {
-            person_first_name: "",
-            person_last_name: "",
-            shelter_id: "",
-            person_code: "",
-            age_group: "12-20",
-            gender: "",
-            notes: ""
+        var newPerson = {
+            person_first_name: req.body.firstName,
+            person_last_name: req.body.lastName,
+            shelter_id: req.user._id,
+            person_code: req.body.peopleCode,
+            age_group: req.body.ageGroup,
+            gender: req.body.gender,
+            notes: req.body.peopleNotes
         };
-        People.create(result).then(function (doc) {
+        People.create(newPerson).then(function (doc) {
             res.json(doc);
         }).catch(function (err) {
             res.json(err);

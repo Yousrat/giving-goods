@@ -31,6 +31,9 @@ const helper = {
         return false;
       });
   },
+  getAllUsers: function () {
+    return axios.get("/api/user-list");
+  },
   getMyInfo: function () {
     return axios.get("/api/get-my-info")
       .then(function (response) {
@@ -76,9 +79,6 @@ const helper = {
         return false;
       });
   },
-  getAllUsers: function () {
-    return axios.get("/api/user-list");
-  },
   getAllPeople: function () {
     return axios.get("/api/all-people-list");
   },
@@ -95,6 +95,15 @@ const helper = {
         item: item
       }
     });
+  },
+  addNewPeople: function (userInfo) {
+    return axios.post("/api/new-people", userInfo)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
   },
   getItemInfo: function (itemId) {
     return axios.get(`/api/item-info/${itemId}`);
