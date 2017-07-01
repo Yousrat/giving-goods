@@ -15,12 +15,12 @@
     background-size: cover;
     height: 100vh;
     margin: -30px;
-    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 #btnDiv {
-    position: absolute;
-    bottom: 100px;
+     align-self: center;
 }
 
 .bannerBTN {
