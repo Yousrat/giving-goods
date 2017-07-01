@@ -3,7 +3,10 @@ var Banner = React.createClass({
     render: function () {
         return (
             <div className="row" id="banner">
-			<img src="assets/images/image1.jpg" alt="giving-goods" className="img-responsive center-block main-banner" /> 
+                <div id="btnDiv" className="">
+                    <button type="button" className="bannerBTN btn btn-secondary btn-lg">Donate</button>
+                    <button type="button" className="bannerBTN btn btn-secondary btn-lg">Shelter</button>
+                </div>
             </div>
         );
     }

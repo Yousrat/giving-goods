@@ -7,6 +7,38 @@
     width: 20%;
 }
 
+#banner {
+    background: url(./../images/image1.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    margin: -30px;
+    position: relative;
+}
+
+#btnDiv {
+    position: absolute;
+    bottom: 100px;
+}
+
+.bannerBTN {
+    background-color: #fff02a;
+    color: black;
+    border: 1px solid dimgrey;
+    margin: 5px;
+    height: 70px;
+    width: 190px;
+}
+
+.bannerBTN:hover {
+    background-color: #f7ef85;
+    color: dimgray;
+    border: 1px solid dimgrey;
+
+}
+
 #about-us{
 	position: relative;
 	margin-top: 400px;
