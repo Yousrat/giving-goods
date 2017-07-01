@@ -1,4 +1,5 @@
 var User = require("../models/User");
+var bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
     allUsers: function (req, res) {
@@ -13,7 +14,7 @@ module.exports = {
             role: req.body.role,
             privilege: req.body.privilege,
             emailId: req.body.emailId,
-            password: req.body.password
+            password: bcrypt.hashSync(req.body.password)
         };
         User.create(result).then(function (doc) {
             res.json(doc);

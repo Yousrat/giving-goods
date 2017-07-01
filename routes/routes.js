@@ -3,6 +3,7 @@ var path = require("path");
 var passport = require('passport');
 const nodemailer = require('nodemailer');
 var LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require('bcrypt-nodejs');
 var User = require("../models/User");
 var apiRoutes = require("./apiRoutes");
 var router = new express.Router();
@@ -37,7 +38,7 @@ passport.use('local-signin', new LocalStrategy({
       console.log('User Not Found with username ');
       return done(null, false, { message: 'Incorrect username.' });
     }
-    if (password !== user.password) {
+    if (!bcrypt.compareSync(password, user.password)){
       console.log('Invalid Password');
       return done(null, false, { message: 'Incorrect Password.' });
     }
