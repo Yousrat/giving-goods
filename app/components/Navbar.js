@@ -14,9 +14,7 @@ var Navbar = React.createClass({
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <a className="navbar-brand" href="#">
-                                <img src="/assets/images/givinggoods.png" id="ggIcon" className="d-inline-block align-top" alt="Giving Goods" />
-                            </a>
+                            <Link className="navbar-brand" to="/">Giving Good(s)</Link>
                         </div>
                         <div className="collapse navbar-collapse" id="ggNavbar">
                             <ul className="nav navbar-nav navbar-right">
