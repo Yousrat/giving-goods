@@ -46,7 +46,7 @@ var Profile = React.createClass({
                 <div className="tab-content">
                     <MyProfile myInfo={this.state.loggedInUser} />
                     <AddUser />
-                    <ManageUsers />
+                    <ManageUsers myData={this.state.loggedInUser}/>
                 </div>
             </div>
         );
