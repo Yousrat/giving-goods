@@ -14,7 +14,7 @@
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
-    margin: -30px;
+    margin: -20px -30px auto -30px;
     display: flex;
     justify-content: center;
 }
@@ -40,8 +40,7 @@
 }
 
 #about-us{
-	position: relative;
-	margin-top: 400px;
+	
 }
 
 #people-list {
