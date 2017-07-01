@@ -1,7 +1,12 @@
-#banner{
+/*#banner{
 	height: 100px;
 
+}*/
+
+#ggIcon {
+    width: 20%;
 }
+
 #about-us{
 	position: relative;
 	margin-top: 400px;

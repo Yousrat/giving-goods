@@ -3,6 +3,7 @@ var Link = require("react-router").Link;
 
 var Navbar = React.createClass({
     render: function () {
+
         return (
             <div className="row header">
                 <nav className="navbar navbar-inverse">
@@ -13,7 +14,9 @@ var Navbar = React.createClass({
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <Link className="navbar-brand" to="/">Giving goods</Link>
+                            <a class="navbar-brand" href="#">
+                                <img src="/assets/images/givinggoods.png" id="ggIcon" className="d-inline-block align-top" alt="Giving Goods" />
+                            </a>
                         </div>
                         <div className="collapse navbar-collapse" id="ggNavbar">
                             <ul className="nav navbar-nav navbar-right">
