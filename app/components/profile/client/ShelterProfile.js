@@ -19,7 +19,7 @@ var ShelterProfile = React.createClass({
 
     handleChange: function (event) {
         var newState = {};
-        newState[event.target.id] = event.target.value;
+        newState[event.target.name] = event.target.value;
         this.setState(newState);
     },
     handleSubmit: function (event) {
@@ -56,18 +56,23 @@ var ShelterProfile = React.createClass({
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="newShelterName">Name</label>
-                                    <input type="text" defaultValue={this.state.name} className="form-control" id="newShelterName" onChange={this.handleChange} required />
-
+                                    <input type="text" defaultValue={this.state.name} className="form-control" id="newShelterName" name="newShelterName" onChange={this.handleChange} required />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="newShelterLocation">Location</label>
-                                    <input type="text" defaultValue={this.state.location} className="form-control" id="newShelterLocation" onChange={this.handleChange} required />
-
+                                    <select className="form-control" defaultValue={this.state.location} id="newShelterLocation" name="newShelterLocation" onChange={this.handleChange} required>
+                                        <option value="">Select location</option>
+                                        <option value="North Coast">North Coast</option>
+                                        <option value="North Inland">North Inland</option>
+                                        <option value="Central Coast">Central Coast</option>
+                                        <option value="Central City">Central City</option>
+                                        <option value="East County">East County</option>
+                                        <option value="South Bay">South Bay</option>
+                                    </select>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="newShelterAddress">Address</label>
-                                    <textarea defaultValue={this.state.address} className="form-control" id="newShelterAddress" onChange={this.handleChange} rows = "3" required />
-
+                                    <textarea defaultValue={this.state.address} className="form-control" id="newShelterAddress" name="newShelterAddress" onChange={this.handleChange} rows="3" required />
                                 </div>
                                 <button type="submit" className="btn btn-primary">Save</button>
                             </form>
@@ -88,7 +93,7 @@ var ShelterProfile = React.createClass({
                 <div className="row">
                     ShelterProfile
                     <p> {this.state.name} </p>
-                    <p> {this.state.role} </p>
+                    <p> {this.state.role} </p>  
                     <p> {this.state.emailId} </p>
                     <p> {this.state.address} </p>
                     <p> {this.state.location} </p>
