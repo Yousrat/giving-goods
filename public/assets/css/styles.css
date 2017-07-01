@@ -1,7 +1,6 @@
-/*#banner{
-	height: 100px;
+/*Home*/
 
-}*/
+/*Banner with Buttons*/
 
 #ggIcon {
     width: 20%;
@@ -39,9 +38,23 @@
 
 }
 
+/*About Us*/
+
 #about-us{
-	
+    width: 90%;
+    margin: auto;
 }
+
+#about-text{
+
+}
+
+#gg-map {
+    max-width: 100%;
+    margin: 30px;
+}
+
+/*Donate Section*/
 
 #people-list {
     display: flex;
