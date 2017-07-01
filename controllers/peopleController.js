@@ -35,6 +35,21 @@ module.exports = {
             res.json(err);
         });
     },
+    updatePeople: function (req, res) {
+        var updatedInfo = {
+            person_first_name: req.body.firstName,
+            person_last_name: req.body.lastName,
+            person_code: req.body.peopleCode,
+            age_group: req.body.ageGroup,
+            gender: req.body.gender,
+            notes: req.body.peopleNotes
+        };
+        People.update({ _id: req.body.peopleId }, updatedInfo).then(function (doc) {
+            res.json(doc);
+        }).catch(function (err) {
+            res.json(err);
+        });
+    },
     peopleByLocation: function (req, res) {
         var shelterIdArray = [];
         if (req.query.location === "All") {

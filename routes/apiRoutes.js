@@ -23,6 +23,8 @@ router.get("/all-people-list", peopleController.allPeople);
 router.get("/my-people-list", peopleController.myPeople);
 // Add new people
 router.post("/new-people", peopleController.addPeople);
+// Update  people info
+router.post("/update-people", peopleController.updatePeople);
 // Get people by location
 router.get("/people-by-location", peopleController.peopleByLocation);
 // Get people by item
@@ -38,5 +40,7 @@ router.get("/item-info/:id", itemController.findItem);
 router.get("/all-my-items", itemController.findMyItemsIds);
 // Add new item
 router.post("/new-item", itemController.addItem);
+// Update an item
+router.post("/update-item", itemController.updateItem);
 
 module.exports = router;

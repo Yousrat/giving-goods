@@ -105,8 +105,35 @@ const helper = {
         return false;
       });
   },
+  updatePeople: function (updatedInfo) {
+    return axios.post("/api/update-people", updatedInfo)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
   findMyPeople:function () {
     return axios.get("/api/my-people-list");
+  },
+  addItem: function (itemInfo) {
+    return axios.post("/api/new-item", itemInfo)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
+  updateItem: function (updateItemInfo) {
+    return axios.post("/api/update-item", updateItemInfo)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
   },
   getItemInfo: function (itemId) {
     return axios.get(`/api/item-info/${itemId}`);

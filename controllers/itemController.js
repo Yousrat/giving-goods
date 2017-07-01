@@ -29,14 +29,14 @@ module.exports = {
     },
     addItem: function (req, res) {
         var result = {
-            people_id: "",
-            item_name: "shoes",
-            quantity: "1",
-            item_status: 0,
-            description: "size 7"
+            people_id: req.body.peopleId,
+            item_name: req.body.itemName,
+            quantity: req.body.quantity,
+            item_status: req.body.itemStatus,
+            description: req.body.description
         };
         Item.create(result).then(function (doc) {
-            People.findOneAndUpdate({ '_id': "" }, { $push: { "items": doc._id } }, { new: true }).then(function (doc) {
+            People.findOneAndUpdate({ '_id': req.body.peopleId }, { $push: { "items": doc._id } }, { new: true }).then(function (doc) {
                 res.json(doc);
             }).catch(function (err) {
                 res.json(err);
@@ -45,10 +45,23 @@ module.exports = {
             res.json(err);
         });
     },
-    findMyItemsIds:function(req,res){
+    updateItem: function (req, res) {
+        var updatedItemInfo = {
+            item_name: req.body.itemName,
+            quantity: req.body.quantity,
+            item_status: req.body.itemStatus,
+            description: req.body.description
+        };
+        Item.update({ _id: req.body.itemId }, updatedItemInfo).then(function (doc) {
+            res.json(doc);
+        }).catch(function (err) {
+            res.json(err);
+        });
+    },
+    findMyItemsIds: function (req, res) {
         var itemIdArray = req.query.idArray;
         Item.find({
-            '_id': { $in: itemIdArray}
+            '_id': { $in: itemIdArray }
         }).then(function (doc) {
             res.json(doc);
         }).catch(function (err) {
