@@ -43,10 +43,10 @@ var Donate = React.createClass({
                     <h1>Donate Goods</h1>
                 </div>
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-6 col-md-offset-6">
                         <Search updateSearch={this.setQuery} />
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-12">
                         <ListPeople peopleList={this.state.peopleList} />
                     </div>
                 </div>

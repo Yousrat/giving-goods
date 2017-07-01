@@ -24,15 +24,15 @@ var Search = React.createClass({
     render: function () {
         return (
             <div id="search-section">
-                <h4>Search</h4>
-                <form onSubmit={this.handleSubmit}>
+                <form className="form-inline" onSubmit={this.handleSubmit}>
+                    Search
                     <div className="form-group">
                         <input type="text" placeholder="by Item" className="form-control" name="item" onChange={this.handleChange} />
                     </div>
-                    <p>OR</p>
+                    OR
                     <div className="form-group">
                         <select className="form-control" name="location" onChange={this.handleChange}>
-                            <option value="All">All location</option>
+                            <option value="All">by Location</option>
                             <option value="North Coast">North Coast</option>
                             <option value="North Inland">North Inland</option>
                             <option value="Central Coast">Central Coast</option>
