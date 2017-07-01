@@ -14,8 +14,26 @@
     background-size: cover;
     height: 100vh;
     margin: -20px -30px auto -30px;
+}
+
+#logoSection{
+    text-align: center;
+    padding-top:4%;
+    color: black;
+}
+
+#logoImg{
+    height: 120px;
+}
+
+#logoText{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+}
+#buttonSection{
     display: flex;
     justify-content: center;
+    height: 70%;
 }
 
 #btnDiv {

@@ -5,10 +5,16 @@ var Banner = React.createClass({
     render: function () {
         return (
             <div className="row" id="banner">
-                <div id="btnDiv" className="">
-                    <button type="button" className="bannerBTN btn btn-secondary btn-lg"><Link to="/donate"> Donate goods</Link></button>
-                    <button type="button" className="bannerBTN btn btn-secondary btn-lg"><Link to="/shelter"> Shelter</Link></button>
+                <div id="logoSection">
+                    <span id="logoText">Giving Goods(s)</span>
+                    <img id="logoImg" src="/assets/images/ggIcon.png" alt="Logo"/>
                 </div>
+                <div id="buttonSection">
+                <div id="btnDiv" className="">
+                    <Link to="/donate"> <button type="button" className="bannerBTN btn btn-secondary btn-lg">Donate goods</button></Link>
+                    <Link to="/shelter"> <button type="button" className="bannerBTN btn btn-secondary btn-lg">Shelter</button></Link>
+                </div>
+                 </div>
             </div>
         );
     }
