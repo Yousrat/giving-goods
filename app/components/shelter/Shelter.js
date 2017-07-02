@@ -21,7 +21,7 @@ var Shelter = React.createClass({
     },
     render: function () {
         return (
-            <div className="container">
+            <div className="container" id="login-container">
                 <h1>Shelter login</h1>
                 <Login />
             </div>

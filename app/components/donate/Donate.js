@@ -38,15 +38,15 @@ var Donate = React.createClass({
     },
     render: function () {
         return (
-            <div className="container">
+            <div className="container" id="donate-container">
                 <div className="row">
                     <h1>Donate Goods</h1>
                 </div>
                 <div className="row">
-                    <div className="col-md-6 col-md-offset-6">
+                    <div className="col-md-6 col-md-offset-6" id="search-section">
                         <Search updateSearch={this.setQuery} />
                     </div>
-                    <div className="col-md-12">
+                    <div className="col-md-12" id="people-list-section">
                         <ListPeople peopleList={this.state.peopleList} />
                     </div>
                 </div>

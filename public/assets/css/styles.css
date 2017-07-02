@@ -1,8 +1,25 @@
-/*Home*/
-body { padding-top: 50px; }
-#navImg{
+/* Parent container*/
+
+#main-container {
+    padding-top: 50px;
+}
+
+/* Child containers*/
+
+#donate-container {}
+
+#login-container {}
+
+#admin-container {}
+
+#shelter-container {}
+
+/* Navbar*/
+
+#navImg {
     height: 70px;
 }
+
 
 /*Banner with Buttons*/
 
@@ -20,28 +37,29 @@ body { padding-top: 50px; }
     margin: auto -30px auto -30px;
 }
 
-#logoSection{
+#logoSection {
     text-align: center;
-    padding-top:4%;
+    padding-top: 4%;
     color: black;
 }
 
-#logoImg{
+#logoImg {
     height: 120px;
 }
 
-#logoText{
+#logoText {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 60px;
 }
-#buttonSection{
+
+#buttonSection {
     display: flex;
     justify-content: center;
     height: 70%;
 }
 
 #btnDiv {
-     align-self: center;
+    align-self: center;
 }
 
 .bannerBTN {
@@ -57,19 +75,16 @@ body { padding-top: 50px; }
     background-color: #f7ef85;
     color: dimgray;
     border: 1px solid dimgrey;
-
 }
 
 /*About Us*/
 
-#about-us{
+#about-us {
     width: 90%;
-    margin: auto; 
+    margin: auto;
 }
 
-#about-text{
-
-}
+#about-text {}
 
 #gg-map {
     max-width: 100%;
@@ -77,16 +92,32 @@ body { padding-top: 50px; }
 }
 
 #about-us,
-#contact-us{
+#contact-us {
     padding-top: 50px;
     padding-bottom: 50px;
 }
-#contact-us{
+
+#contact-us {
     background-color: #eaeaea;
     margin: auto -30px auto -30px;
 }
 
+
 /*Donate Section*/
+
+#search-section input,
+#search-section select,
+#search-section button {
+    margin: 10px;
+}
+
+#search-section b{
+    font-size: 18px;
+}
+
+#people-list-section {
+
+}
 
 #people-list {
     display: flex;

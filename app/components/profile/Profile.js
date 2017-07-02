@@ -40,7 +40,7 @@ var Profile = React.createClass({
     },
     renderAdminPanel: function () {
         return (
-            <div className="container">
+            <div className="container" id="admin-container">
                 {this.renderLogout()}
                 <AdminNavTab />
                 <div className="tab-content">
@@ -53,7 +53,7 @@ var Profile = React.createClass({
     },
     renderShelterPanel: function () {
         return (
-            <div className="container">
+            <div className="container" id="shelter-container">
                 {this.renderLogout()}
                 <ShelterNavTab />
                 <div className="tab-content">

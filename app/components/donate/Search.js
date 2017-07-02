@@ -23,27 +23,25 @@ var Search = React.createClass({
 
     render: function () {
         return (
-            <div id="search-section">
-                <form className="form-inline" onSubmit={this.handleSubmit}>
-                    Search
+            <form className="form-inline" onSubmit={this.handleSubmit}>
+                <b>Search</b>
+                <div className="form-group">
+                    <input type="text" placeholder="by Item" className="form-control" name="item" onChange={this.handleChange} />
+                </div>
+                OR
                     <div className="form-group">
-                        <input type="text" placeholder="by Item" className="form-control" name="item" onChange={this.handleChange} />
-                    </div>
-                    OR
-                    <div className="form-group">
-                        <select className="form-control" name="location" onChange={this.handleChange}>
-                            <option value="All">by Location</option>
-                            <option value="North Coast">North Coast</option>
-                            <option value="North Inland">North Inland</option>
-                            <option value="Central Coast">Central Coast</option>
-                            <option value="Central City">Central City</option>
-                            <option value="East County">East County</option>
-                            <option value="South Bay">South Bay</option>
-                        </select>
-                    </div>
-                    <button type="submit" className="btn btn-default">Submit</button>
-                </form>
-            </div>
+                    <select className="form-control" name="location" onChange={this.handleChange}>
+                        <option value="All">by Location</option>
+                        <option value="North Coast">North Coast</option>
+                        <option value="North Inland">North Inland</option>
+                        <option value="Central Coast">Central Coast</option>
+                        <option value="Central City">Central City</option>
+                        <option value="East County">East County</option>
+                        <option value="South Bay">South Bay</option>
+                    </select>
+                </div>
+                <button type="submit" className="btn btn-secondary">Submit</button>
+            </form>
         );
     }
 });
