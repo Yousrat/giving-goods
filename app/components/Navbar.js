@@ -6,7 +6,7 @@ var Navbar = React.createClass({
 
         return (
             <div className="row header">
-                <nav className="navbar navbar-inverse">
+                <nav className="navbar navbar-inverse navbar-fixed-top">
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#ggNavbar">
