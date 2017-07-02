@@ -64,8 +64,7 @@ body { padding-top: 50px; }
 
 #about-us{
     width: 90%;
-    margin: auto;
-    padding-top: 50px;
+    margin: auto; 
 }
 
 #about-text{
@@ -75,6 +74,16 @@ body { padding-top: 50px; }
 #gg-map {
     max-width: 100%;
     margin: 30px;
+}
+
+#about-us,
+#contact-us{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#contact-us{
+    background-color: #eaeaea;
+    margin: auto -30px auto -30px;
 }
 
 /*Donate Section*/
