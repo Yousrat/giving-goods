@@ -86,8 +86,8 @@ var MyProfile = React.createClass({
         return (
             <div id="my-profile" className="tab-pane fade in active">
                 <NotificationSystem ref="notificationSystem" />
-                <div className="row">
-                    MyProfile
+                <div className="row" id="user-profile">
+                    
                     <p> {this.state.name} </p>
                     <p> {this.state.role} </p>
                     <p> {this.state.emailId} </p>
