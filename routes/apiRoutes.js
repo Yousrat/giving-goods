@@ -12,6 +12,8 @@ router.post("/new-user", userController.addUser);
 router.get("/get-my-info", userController.getMyInfo);
 // Update logged in user info
 router.post("/update-my-info", userController.updateMyInfo);
+// Update logged in user password
+router.post("/update-my-password", userController.updatePassword);
 // Suspend a user
 router.post("/suspend-user", userController.suspendUser);
 // Activate a user account

@@ -36,7 +36,7 @@ var ContactUs = React.createClass({
                 <div className="col-md-6 col-md-offset-3">
                     <h3>Contact Giving Good(s)</h3>
                     <div className=" panel panel-default">
-                        <div className="panel-body">
+                        <div className="panel-body" id="contact-us-panel">
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <input type="text" placeholder="Your Email Address" className="form-control" id="clientEmail" onChange={this.handleChange} required />

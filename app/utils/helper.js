@@ -52,6 +52,15 @@ const helper = {
         return false;
       });
   },
+  updateMyPassword: function (updatedPass) {
+    return axios.post("/api/update-my-password", updatedPass)
+      .then(function (response) {
+        return (response);
+      })
+      .catch(function (error) {
+        return false;
+      });
+  },
   addNewUser: function (userInfo) {
     return axios.post("/api/new-user", userInfo)
       .then(function (response) {

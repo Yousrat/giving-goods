@@ -14,7 +14,8 @@ import { browserHistory } from 'react-router';
 var Profile = React.createClass({
     getInitialState: function () {
         return {
-            loggedInUser: ""
+            loggedInUser: "",
+            passwordMessage: ""
         }
     },
     componentDidMount: function () {
@@ -25,9 +26,78 @@ var Profile = React.createClass({
     handleClick: function (event) {
         helpers.default.logoutUser();
     },
-    renderLogout: function () {
+    handlePasswordChange: function (event) {
+        var newState = {};
+        newState[event.target.id] = event.target.value;
+        this.setState(newState);
+        if (newState.updateRepeatPassword) {
+            if (newState.updateRepeatPassword !== this.state.updatePassword) {
+                this.setState({ passwordMessage: " Password does NOT match" });
+            } else if (newState.updateRepeatPassword === this.state.updatePassword) {
+                this.setState({ passwordMessage: " Password match" });
+            }
+        }
+    },
+    handlePasswordSubmit: function (event) {
+        event.preventDefault();
+        if (this.state.updatePassword === this.state.updateRepeatPassword) {
+            helpers.default.updateMyPassword({
+                password: this.state.updatePassword
+            }).then((user) => {
+                if(!user.data){
+                    this.setState({ passwordMessage: "Password NOT updated" });
+                }else{
+                    this.setState({ passwordMessage: "Password updated" });
+                    window.location = "/profile";
+                }
+            });
+        } else {
+            this.setState({ passwordMessage: "Password NOT updated" });
+        }
+    },
+    renderSettings: function () {
         return (
-            <Link to="/home" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"></span> Logout</Link>
+            <div className="dropdown">
+                <button className="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span className="glyphicon glyphicon-cog"></span> Settings
+                    <span className="caret"></span>
+                </button>
+                <ul className="dropdown-menu">
+                    <li> <Link to="/home" onClick={this.handleClick}>Logout</Link></li>
+                    <li> <Link data-toggle="modal" data-target="#my-password-edit">Change password</Link></li>
+                </ul>
+            </div>
+        );
+    },
+    renderEditPasswordModal: function () {
+        return (
+            <div id="my-password-edit" className="modal fade" role="dialog">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <h4 className="modal-title">Change Password</h4>
+                        </div>
+                        <div className="modal-body">
+                            <form onSubmit={this.handlePasswordSubmit}>
+                                <div className="form-group">
+                                    <label htmlFor="updatePassword">New password</label>
+                                    <input type="text" className="form-control" id="updatePassword" onChange={this.handlePasswordChange} required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="updateRepeatPassword">Repeat password </label>
+                                    <input type="text" className="form-control" id="updateRepeatPassword" onChange={this.handlePasswordChange} required />
+                                    <small>{this.state.passwordMessage}</small>
+                                </div>
+                                <button type="submit" className="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     },
     renderWarning: function () {
@@ -41,12 +111,13 @@ var Profile = React.createClass({
     renderAdminPanel: function () {
         return (
             <div className="container" id="admin-container">
-                {this.renderLogout()}
+                {this.renderSettings()}
+                {this.renderEditPasswordModal()}
                 <AdminNavTab />
                 <div className="tab-content">
                     <MyProfile myInfo={this.state.loggedInUser} />
                     <AddUser />
-                    <ManageUsers myData={this.state.loggedInUser}/>
+                    <ManageUsers myData={this.state.loggedInUser} />
                 </div>
             </div>
         );
@@ -54,7 +125,8 @@ var Profile = React.createClass({
     renderShelterPanel: function () {
         return (
             <div className="container" id="shelter-container">
-                {this.renderLogout()}
+                {this.renderSettings()}
+                {this.renderEditPasswordModal()}
                 <ShelterNavTab />
                 <div className="tab-content">
                     <ShelterProfile shelterInfo={this.state.loggedInUser} />

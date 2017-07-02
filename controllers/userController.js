@@ -45,6 +45,22 @@ module.exports = {
                 });
         }
     },
+    updatePassword: function (req, res) {
+        var updatedPass = {
+            password: bcrypt.hashSync(req.body.password)
+        };
+        if (req.user && (req.body.password !== undefined)) {
+            let userId = req.user._id;
+            User.update({ _id: userId }, updatedPass)
+                .then(function (doc) {
+                    res.json(doc);
+                }).catch(function (err) {
+                    res.json(err);
+                });
+        }else{
+            res.json(false);
+        }
+    },
     suspendUser: function (req, res) {
         let userId = req.body.id;
         User.update({ _id: userId }, { privilege: 3 })
