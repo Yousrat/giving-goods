@@ -106,7 +106,7 @@ var Profile = React.createClass({
     },
     renderWarning: function () {
         return (
-            <div className="container">
+            <div className="container" id="login-warning">
                 Please Login
                 <button><Link to="/shelter">Login</Link></button>
             </div>

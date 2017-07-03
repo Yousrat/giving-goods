@@ -91,12 +91,31 @@ var ShelterProfile = React.createClass({
             <div id="shelter-profile" className="tab-pane fade in active">
                 <NotificationSystem ref="notificationSystem" />
                 <div className="row">
-                    ShelterProfile
-                    <p> {this.state.name} </p>
-                    <p> {this.state.role} </p>  
-                    <p> {this.state.emailId} </p>
-                    <p> {this.state.address} </p>
-                    <p> {this.state.location} </p>
+
+<table className="table">
+                            <tbody>
+                                <tr className="table-warning">
+                                    <td> <b>Name:</b></td>
+                                    <td>{this.state.name}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Role:</b></td>
+                                    <td>{this.state.role}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Email:</b></td>
+                                    <td>{this.state.emailId}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Address:</b></td>
+                                    <td>{this.state.address}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Location:</b></td>
+                                    <td>{this.state.location}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#shelter-profile-edit">Edit</button>
                     {this.renderEditModal()}
                 </div>
