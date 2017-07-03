@@ -56,7 +56,7 @@ var AddUser = React.createClass({
                             </div>
                             <div className="form-group">
                                 <select className="form-control" name="newUserRole" onChange={this.handleChange} required>
-                                    <option value="" disabled selected hidden>User Role</option>
+                                    <option value="" disabled selected>User Role</option>
                                     <option value="shelter">Shelter</option>
                                     <option value="admin">Admin</option>
                                 </select>
