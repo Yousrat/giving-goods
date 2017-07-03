@@ -21,7 +21,10 @@
     min-height: 85vh;
 }
 
-#shelter-container {}
+#shelter-container {
+    padding-top: 50px;
+    min-height: 85vh;
+}
 
 /* Navbar*/
 
