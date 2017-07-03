@@ -67,7 +67,7 @@ var AddItemModal = React.createClass({
                                 </div>
                                 <div className="form-group">
                                     <select className="form-control" name="newItemStatus" onChange={this.handleAddItemChange} required>
-                                        <option value="" disabled selected>Status</option>
+                                        <option value="" disabled>Status</option>
                                         <option value="0">Needed</option>
                                         <option value="1">Received</option>
                                     </select>
