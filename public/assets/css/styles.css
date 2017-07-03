@@ -11,7 +11,10 @@
     min-height: 80vh;
     }
 
-#login-container {}
+#login-container {
+    padding-top: 50px;
+    min-height: 80vh;
+}
 
 #admin-container {
     padding-top: 50px;
@@ -152,4 +155,9 @@
 }
 #add-user{
     padding-top: 50px;
+}
+.footer{
+    text-align: center;
+    padding-top: 2%;
+    color: black;
 }
