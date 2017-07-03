@@ -38,7 +38,7 @@ var ManagePeople = React.createClass({
                                     <td>{item.quantity}</td>
                                     <td>{item.description}</td>
                                     <td>Needed</td>
-                                    <td><button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#editItemModal" onClick={this.setEditItem.bind(this, item)}>Edit Item</button></td>
+                                    <td><button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#editItemModal" onClick={this.setEditItem.bind(this, item)}>Edit Item</button></td>
                                 </tr>
                             );
                         } else {
@@ -48,7 +48,7 @@ var ManagePeople = React.createClass({
                                     <td>{item.quantity}</td>
                                     <td>{item.description}</td>
                                     <td>Received</td>
-                                    <td><button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#editItemModal" onClick={this.setEditItem.bind(this, item)}>Edit Item</button></td>
+                                    <td><button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#editItemModal" onClick={this.setEditItem.bind(this, item)}>Edit Item</button></td>
                                 </tr>
                             );
                         }
