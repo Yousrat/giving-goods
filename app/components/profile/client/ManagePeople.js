@@ -78,8 +78,8 @@ var ManagePeople = React.createClass({
                             <p>Age Group: {people.age_group} </p>
                             <p>Case ID: {people.person_code}</p>
                             <p>Short Bio: {people.notes}</p>
-                            <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#editPeopleModal" onClick={this.setEditPeople.bind(this, people)}>Edit info</button>
-                            <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#addItemModal" onClick={this.setAddItem.bind(this, people)}>Add item</button>
+                            <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#editPeopleModal" onClick={this.setEditPeople.bind(this, people)}>Edit Personal Info</button>
+                            <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#addItemModal" onClick={this.setAddItem.bind(this, people)}>Add Item</button>
                         </div>
                         <div className="col-md-7" >
                             {itemTable}
