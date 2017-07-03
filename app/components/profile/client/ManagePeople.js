@@ -18,6 +18,11 @@ var ManagePeople = React.createClass({
             this.setState({ myPeopleList: peopleArray.data });
         }.bind(this));
     },
+    componentDidUpdate:function () {
+        helper.default.findMyPeople().then(function (peopleArray) {
+            this.setState({ myPeopleList: peopleArray.data });
+        }.bind(this));
+    },
     setEditPeople: function (people) {
         this.setState({ currentPeople: people });
     },
