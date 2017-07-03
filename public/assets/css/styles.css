@@ -18,13 +18,13 @@
     border-radius: 0px;
 }
 
-/* Parent container*/
+/* Parent Container*/
 
 #main-container {
     padding-top: 50px;
 }
 
-/* Child containers*/
+/* Child Containers*/
 
 #donate-container {
     padding-top: 50px;
@@ -154,6 +154,11 @@ padding-top: 50px;
     padding: 7%;
 }
 
+/*Shelter Login*/
+
+div #login form {
+    padding: 20px;
+}
 
 /*Donate Section*/
 
