@@ -6,11 +6,18 @@
 
 /* Child containers*/
 
-#donate-container {}
+#donate-container {
+    padding-top: 50px;
+    min-height: 80vh;
+    }
 
 #login-container {}
 
-#admin-container {}
+#admin-container {
+    padding-top: 50px;
+    min-height: 80vh;
+
+}
 
 #shelter-container {}
 
@@ -124,6 +131,7 @@
 }
 
 #people-list {
+    padding-top: 50px;
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
@@ -141,4 +149,7 @@
 #user-profile{
     margin-left: 100px;
     Margin-top: 50px;
+}
+#add-user{
+    padding-top: 50px;
 }
