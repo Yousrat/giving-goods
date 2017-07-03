@@ -15,10 +15,10 @@ var AboutUs = React.createClass({
                             To alleviate these issues, caseworkers help on a case to case basis. But the caseworkers need our help with getting specific items to those in need. Most donation centers receive bulk items that are not necessarily catered to an individual’s specific needs. 
                         </p>
                         <blockquote>
-                            "The goal is to build more of a connection between the San Diego community and their housing insecure neighbors."
+                            "The goal is to build more of a connection between the San Diego community and its housing insecure neighbors."
                         </blockquote>                        
                         <p>
-                            Our app showcases these clients’ wish lists which are put together by their caseworkers. The goal is to build more of a connection between the San Diego community and their housing insecure neighbors. Instead of wondering where exactly their donated items go, people will know the items go directly to clients in need.
+                            Our app showcases these clients’ wish lists which are put together by their caseworkers. The goal is to build more of a connection between the San Diego community and its housing insecure neighbors. Instead of wondering where exactly their donated items go, people will know the items go directly to clients in need.
                         </p>
                     </div>
                     <div className="col-md-5">
