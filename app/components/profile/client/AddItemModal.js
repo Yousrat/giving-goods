@@ -23,11 +23,11 @@ var AddItemModal = React.createClass({
     handleAddItemSubmit: function (event) {
         event.preventDefault();
         var newItemInfo = {
-            peopleId:this.state.peopleDetails._id,
-            itemName:this.state.newItemName,
-            quantity:this.state.newItemQuantity,
-            itemStatus:this.state.newItemStatus,
-            description:this.state.newItemDescription
+            peopleId: this.state.peopleDetails._id,
+            itemName: this.state.newItemName,
+            quantity: this.state.newItemQuantity,
+            itemStatus: this.state.newItemStatus,
+            description: this.state.newItemDescription
         };
         helper.default.addItem(newItemInfo).then((newItem) => {
             if (newItem) {

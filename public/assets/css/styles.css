@@ -1,6 +1,6 @@
 .modal-header {
-    padding:9px 15px;
-    border-bottom:1px solid #eee;
+    padding: 9px 15px;
+    border-bottom: 1px solid #eee;
     background-color: #ffffc3;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
@@ -8,15 +8,17 @@
     -moz-border-radius-topright: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
- }
+}
 
 .modal-body {
     padding: 25px;
 }
 
-.btn, .btn-sm{
+.btn,
+.btn-sm {
     border-radius: 0px;
 }
+
 
 /* Parent Container*/
 
@@ -24,44 +26,25 @@
     padding-top: 50px;
 }
 
+
 /* Child Containers*/
 
-#donate-container {
-    padding-top: 50px;
-    min-height: 85vh;
-    }
-
-#login-container {
-    padding-top: 50px;
-    min-height: 85vh;
-}
-
-#admin-container {
+#donate-container,
+#login-container,
+#admin-container,
+#shelter-container,
+#login-warning {
     padding-top: 50px;
     min-height: 85vh;
 }
 
-#shelter-container {
+#shelter-profile,
+#manage-people,
+#add-people {
     padding-top: 50px;
-    min-height: 85vh;
 }
 
-#shelter-profile{
-    padding-top: 50px;
-    min-height: 85vh;
-}
-#manage-people{
-padding-top: 50px;
-    min-height: 85vh;
-}
-#add-people{
-padding-top: 50px;
-    min-height: 85vh;
-}
-#login-warning{
-    padding-top: 50px;
-    min-height: 85vh;
-}
+
 /* Navbar*/
 
 #navImg {
@@ -125,6 +108,7 @@ padding-top: 50px;
     border: 1px solid dimgrey;
 }
 
+
 /*About Us*/
 
 #about-us {
@@ -150,15 +134,17 @@ padding-top: 50px;
     margin: auto -30px auto -30px;
 }
 
-#contact-us-panel{
+#contact-us-panel {
     padding: 7%;
 }
+
 
 /*Shelter Login*/
 
 div #login form {
     padding: 20px;
 }
+
 
 /*Donate Section*/
 
@@ -172,13 +158,11 @@ div #login form {
     padding-top: 10px;
 }
 
-#search-section b{
+#search-section b {
     font-size: 18px;
 }
 
-#people-list-section {
-
-}
+#people-list-section {}
 
 #people-list {
     display: flex;
@@ -196,32 +180,38 @@ div #login form {
     border: 5px double white;
 }
 
-#user-profile{
+#user-profile {
     margin-left: 100px;
     Margin-top: 50px;
 }
-#add-user{
+
+#add-user {
     padding-top: 50px;
 }
-.footer{
+
+.footer {
     text-align: center;
     padding-top: 1%;
     background-color: black;
-    color:whitesmoke;
+    color: whitesmoke;
     padding-right: 30px;
 }
-.footer p,.footer img{
-display: inline-block;
+
+.footer p,
+.footer img {
+    display: inline-block;
 }
+
 .footer p {
     margin-top: 10px;
 }
-#github{
-  float: right;
-  height: 45px;
-  width: 45px;
-  margin-bottom: 10px;
-  background-color: white;
+
+#github {
+    float: right;
+    height: 45px;
+    width: 45px;
+    margin-bottom: 10px;
+    background-color: white;
     border: solid 2px grey;
     border-radius: 100%;
     transition: all 0.3s ease-in-out;

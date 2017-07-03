@@ -7,7 +7,6 @@ var Footer = React.createClass({
                 <a href="https://github.com/Yousrat/giving-goods">
                     <img id="github" src="/assets/images/Github.png" alt="Github Code" />
                 </a>
-
             </div>
         );
     }

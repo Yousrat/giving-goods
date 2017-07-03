@@ -45,11 +45,11 @@ var AddUser = React.createClass({
         return (
             <div id="add-user" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
-               
+
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <h4>Enter User Details</h4>
-                        <br/>
+                        <br />
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <input type="text" placeholder="User Email Address" className="form-control" id="newUserEmailId" name="newUserEmailId" onChange={this.handleChange} required />

@@ -14,7 +14,7 @@ var AddPeople = React.createClass({
     },
     handleSubmit: function (event) {
         event.preventDefault();
-        var newUserInfo ={
+        var newUserInfo = {
             firstName: this.state.newPeopleFirstName,
             lastName: this.state.newPeopleLastName,
             peopleCode: this.state.newPeopleCode,
@@ -45,9 +45,9 @@ var AddPeople = React.createClass({
         return (
             <div id="add-people" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
-                
+
                 <div className="row">
-                     <div className="col-md-6 col-md-offset-3">
+                    <div className="col-md-6 col-md-offset-3">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <input type="text" placeholder="First Name" className="form-control" name="newPeopleFirstName" onChange={this.handleChange} required />

@@ -92,8 +92,7 @@ var ShelterProfile = React.createClass({
                 <NotificationSystem ref="notificationSystem" />
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
-
-<table className="table">
+                        <table className="table">
                             <tbody>
                                 <tr className="table-warning">
                                     <td> <b>Name:</b></td>
@@ -117,10 +116,9 @@ var ShelterProfile = React.createClass({
                                 </tr>
                             </tbody>
                         </table>
-                       
-                    <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#shelter-profile-edit">Edit</button>
-                    {this.renderEditModal()}
-                     </div>
+                        <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#shelter-profile-edit">Edit</button>
+                        {this.renderEditModal()}
+                    </div>
                 </div>
             </div>
         );

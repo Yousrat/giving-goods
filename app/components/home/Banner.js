@@ -9,11 +9,11 @@ var Banner = React.createClass({
                     <span id="logoText">Giving Goods(s) </span>
                 </div>
                 <div id="buttonSection">
-                <div id="btnDiv" className="">
-                    <Link to="/donate"> <button type="button" className="bannerBTN btn btn-secondary btn-lg">Donate Goods</button></Link>
-                    <Link to="/shelter"> <button type="button" className="bannerBTN btn btn-secondary btn-lg">Shelter Login</button></Link>
+                    <div id="btnDiv" className="">
+                        <Link to="/donate"> <button type="button" className="bannerBTN btn btn-secondary btn-lg">Donate Goods</button></Link>
+                        <Link to="/shelter"> <button type="button" className="bannerBTN btn btn-secondary btn-lg">Shelter Login</button></Link>
+                    </div>
                 </div>
-                 </div>
             </div>
         );
     }
