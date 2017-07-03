@@ -101,7 +101,6 @@ var ManagePeople = React.createClass({
     render: function () {
         return (
             <div id="manage-people" className="tab-pane fade">
-                Manage People
                 {this.renderMyPeople()}
                 <EditPeopleModal peopleData={this.state.currentPeople} resetPeople={this.resetMyPeople} />
                 <AddItemModal peopleData={this.state.currentPeopleAddItem} resetPeople={this.resetMyPeople} />

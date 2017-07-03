@@ -21,8 +21,27 @@
     min-height: 85vh;
 }
 
-#shelter-container {}
+#shelter-container {
+    padding-top: 50px;
+    min-height: 85vh;
+}
 
+#shelter-profile{
+    padding-top: 50px;
+    min-height: 85vh;
+}
+#manage-people{
+padding-top: 50px;
+    min-height: 85vh;
+}
+#add-people{
+padding-top: 50px;
+    min-height: 85vh;
+}
+#login-warning{
+    padding-top: 50px;
+    min-height: 85vh;
+}
 /* Navbar*/
 
 #navImg {
@@ -124,6 +143,10 @@
     margin: 10px;
 }
 
+#search-section {
+    padding-top: 10px;
+}
+
 #search-section b{
     font-size: 18px;
 }
@@ -133,7 +156,6 @@
 }
 
 #people-list {
-    padding-top: 50px;
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
