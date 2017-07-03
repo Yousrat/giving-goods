@@ -15,7 +15,7 @@ var itemSchema = new Schema({
         type: String
     },
     item_status: {
-        default: 0
+        type: Number,
     },
     description: String
 });

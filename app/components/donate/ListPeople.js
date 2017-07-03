@@ -57,13 +57,15 @@ var ListPeople = React.createClass({
         var itemRows = "";
         if (this.state.currentPersonItems.length !== 0) {
             itemRows = this.state.currentPersonItems.map((item, index) => {
-                return (
-                    <tr key={index}>
-                        <td>{item.item_name}</td>
-                        <td>{item.quantity}</td>
-                        <td>{item.description}</td>
-                    </tr>
-                );
+                if (item.item_status === 0) {
+                    return (
+                        <tr key={index}>
+                            <td>{item.item_name}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.description}</td>
+                        </tr>
+                    );
+                }
             });
         }
         return (
