@@ -151,7 +151,7 @@ var ListPeople = React.createClass({
         } else {
             return (
                 <div >
-                    No result
+                    No Results
                 </div>
             );
         }

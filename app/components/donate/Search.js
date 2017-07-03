@@ -31,7 +31,8 @@ var Search = React.createClass({
                 OR
                     <div className="form-group">
                     <select className="form-control" name="location" onChange={this.handleChange}>
-                        <option value="All">by Location</option>
+                        <option value="">by Location</option>
+                        <option value="All">All Locations</option>
                         <option value="North Coast">North Coast</option>
                         <option value="North Inland">North Inland</option>
                         <option value="Central Coast">Central Coast</option>
