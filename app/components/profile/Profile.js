@@ -62,10 +62,10 @@ var Profile = React.createClass({
     renderSettings: function () {
         return (
             <div className="dropdown">
-                <button className="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                <Link className="dropdown-toggle" data-toggle="dropdown">
                     <span className="glyphicon glyphicon-cog"></span> Settings
                     <span className="caret"></span>
-                </button>
+                </Link>
                 <ul className="dropdown-menu">
                     <li> <Link to="/home" onClick={this.handleClick}>Logout</Link></li>
                     <li> <Link data-toggle="modal" data-target="#my-password-edit">Change password</Link></li>
