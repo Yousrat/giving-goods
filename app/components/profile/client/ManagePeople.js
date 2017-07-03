@@ -7,16 +7,14 @@ var EditItemModal = require("./EditItemModal");
 var ManagePeople = React.createClass({
     getInitialState: function () {
         return {
-            myPeopleList: [],
+            myPeopleList: this.props.peopleList,
             currentPeople: [],
             currentPeopleAddItem: [],
             currentItemUpdate: []
         }
     },
-    componentWillMount: function () {
-        helper.default.findMyPeople().then((peopleArray) => {
-            this.setState({ myPeopleList: peopleArray.data });
-        });
+    componentWillReceiveProps: function (nextProps) {
+        this.setState({ myPeopleList: nextProps.peopleList });
     },
     setEditPeople: function (people) {
         this.setState({ currentPeople: people });

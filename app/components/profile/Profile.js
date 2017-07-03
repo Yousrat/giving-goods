@@ -15,12 +15,16 @@ var Profile = React.createClass({
     getInitialState: function () {
         return {
             loggedInUser: "",
+            loggedInUserPeople: "",
             passwordMessage: ""
         }
     },
     componentDidMount: function () {
         helpers.default.getMyInfo().then(function (myInfo) {
             this.setState({ loggedInUser: myInfo.data });
+        }.bind(this));
+        helpers.default.findMyPeople().then(function (peopleArray) {
+            this.setState({ loggedInUserPeople: peopleArray.data });
         }.bind(this));
     },
     handleClick: function (event) {
@@ -44,9 +48,9 @@ var Profile = React.createClass({
             helpers.default.updateMyPassword({
                 password: this.state.updatePassword
             }).then((user) => {
-                if(!user.data){
+                if (!user.data) {
                     this.setState({ passwordMessage: "Password NOT updated" });
-                }else{
+                } else {
                     this.setState({ passwordMessage: "Password updated" });
                     window.location = "/profile";
                 }
@@ -130,11 +134,14 @@ var Profile = React.createClass({
                 <ShelterNavTab />
                 <div className="tab-content">
                     <ShelterProfile shelterInfo={this.state.loggedInUser} />
-                    <AddPeople />
-                    <ManagePeople />
+                    <AddPeople resetPeople={this.resetMyPeople} />
+                    <ManagePeople peopleList={this.state.loggedInUserPeople} />
                 </div>
             </div>
         );
+    },
+    resetMyPeople: function (newData) {
+        this.setState({ loggedInUserPeople: newData });
     },
     render: function () {
         if (this.state.loggedInUser) {

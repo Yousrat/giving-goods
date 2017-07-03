@@ -29,6 +29,9 @@ var AddPeople = React.createClass({
                     level: 'success',
                     position: 'tr'
                 });
+                helper.default.findMyPeople().then(function (peopleArray) {
+                    this.props.resetPeople(peopleArray.data);
+                }.bind(this));
             } else {
                 this._notificationSystem.addNotification({
                     message: 'Error',
