@@ -8,18 +8,17 @@
 
 #donate-container {
     padding-top: 50px;
-    min-height: 80vh;
+    min-height: 85vh;
     }
 
 #login-container {
     padding-top: 50px;
-    min-height: 80vh;
+    min-height: 85vh;
 }
 
 #admin-container {
     padding-top: 50px;
-    min-height: 80vh;
-
+    min-height: 85vh;
 }
 
 #shelter-container {}
