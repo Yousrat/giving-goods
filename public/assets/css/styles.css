@@ -179,21 +179,7 @@ display: inline-block;
     transition: all 0.3s ease-in-out;
 }
 
-
 #github:hover,
 #github:focus {
     border: solid 2px white;
 }
-/*.btn-social {
-    
-    
-    display: inline-block;
-    height: 40px;
-    
-    width: 40px;
-}*/
-
-/*.social-stackoverflow {
-    padding: 1px;
-}*/
-
