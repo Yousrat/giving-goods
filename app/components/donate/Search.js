@@ -18,7 +18,6 @@ var Search = React.createClass({
     handleSubmit: function (event) {
         event.preventDefault();
         this.props.updateSearch(this.state.location, this.state.item);
-        console.log(this.state.location + " xxxxx " + this.state.item);
     },
 
     render: function () {
@@ -29,7 +28,7 @@ var Search = React.createClass({
                     <input type="text" placeholder="by Item" className="form-control" name="item" onChange={this.handleChange} />
                 </div>
                 OR
-                    <div className="form-group">
+                <div className="form-group">
                     <select className="form-control" name="location" onChange={this.handleChange}>
                         <option value="">by Location</option>
                         <option value="All">All Locations</option>

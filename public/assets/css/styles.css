@@ -131,6 +131,10 @@
     margin: 10px;
 }
 
+#search-section {
+    padding-top: 10px;
+}
+
 #search-section b{
     font-size: 18px;
 }
@@ -140,7 +144,6 @@
 }
 
 #people-list {
-    padding-top: 50px;
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
