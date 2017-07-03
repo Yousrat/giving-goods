@@ -14,7 +14,7 @@ var ManagePeople = React.createClass({
         }
     },
     componentWillMount: function () {
-        helper.default.findMyPeople().then( (peopleArray) => {
+        helper.default.findMyPeople().then((peopleArray) => {
             this.setState({ myPeopleList: peopleArray.data });
         });
     },
@@ -33,14 +33,28 @@ var ManagePeople = React.createClass({
                 var itemTable = <div>No item</div>
                 if (people.items.length !== 0) {
                     var itemRow = people.items.map(function (item, i) {
-                        return (
-                            <tr key={i}>
-                                <td>{item.item_name}</td>
-                                <td>{item.quantity}</td>
-                                <td>{item.description}</td>
-                                <td><button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#editItemModal" onClick={this.setEditItem.bind(this, item)}>Edit Item</button></td>
-                            </tr>
-                        );
+                        if (item.item_status === 0) {
+                            return (
+                                <tr key={i}>
+                                    <td>{item.item_name}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.description}</td>
+                                    <td>Needed</td>
+                                    <td><button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#editItemModal" onClick={this.setEditItem.bind(this, item)}>Edit Item</button></td>
+                                </tr>
+                            );
+                        } else {
+                            return (
+                                <tr key={i}>
+                                    <td>{item.item_name}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.description}</td>
+                                    <td>Received</td>
+                                    <td><button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#editItemModal" onClick={this.setEditItem.bind(this, item)}>Edit Item</button></td>
+                                </tr>
+                            );
+                        }
+
                     }.bind(this));
 
                     itemTable = <table className="table table-hover">
@@ -49,6 +63,7 @@ var ManagePeople = React.createClass({
                                 <th>Item</th>
                                 <th>Quantity</th>
                                 <th>Description</th>
+                                <th>Status</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -90,9 +105,9 @@ var ManagePeople = React.createClass({
             <div id="manage-people" className="tab-pane fade">
                 Manage people
                 {this.renderMyPeople()}
-                <EditPeopleModal peopleData={this.state.currentPeople} resetPeople={this.resetMyPeople}/>
-                <AddItemModal peopleData={this.state.currentPeopleAddItem} resetPeople={this.resetMyPeople}/>
-                <EditItemModal itemData={this.state.currentItemUpdate} resetPeople={this.resetMyPeople}/>
+                <EditPeopleModal peopleData={this.state.currentPeople} resetPeople={this.resetMyPeople} />
+                <AddItemModal peopleData={this.state.currentPeopleAddItem} resetPeople={this.resetMyPeople} />
+                <EditItemModal itemData={this.state.currentItemUpdate} resetPeople={this.resetMyPeople} />
             </div>
         );
     }
