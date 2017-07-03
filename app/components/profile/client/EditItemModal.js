@@ -35,7 +35,7 @@ var EditItemModal = React.createClass({
                     this.props.resetPeople(peopleArray.data);
                 }.bind(this));
                 this._notificationSystem.addNotification({
-                    message: 'Updated item info',
+                    message: 'Updated Item Info',
                     level: 'success',
                     position: 'tr'
                 });
@@ -60,7 +60,7 @@ var EditItemModal = React.createClass({
                         <div className="modal-body">
                             <form onSubmit={this.handleEditItemSubmit}>
                                 <div className="form-group">
-                                    <label>Item name</label>
+                                    <label>Item Name</label>
                                     <input type="text" className="form-control" name="updateItemName" onChange={this.handleEditItemChange} />
                                 </div>
                                 <div className="form-group">
@@ -68,7 +68,7 @@ var EditItemModal = React.createClass({
                                     <input type="text" className="form-control" name="updateItemQuantity" onChange={this.handleEditItemChange} />
                                 </div>
                                 <div className="form-group">
-                                    <label >Item status</label>
+                                    <label >Item Status</label>
                                     <select className="form-control" name="updateItemStatus" onChange={this.handleEditItemChange} required>
                                         <option value="">Select</option>
                                         <option value="0">Needed</option>

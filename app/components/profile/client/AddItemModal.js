@@ -35,7 +35,7 @@ var AddItemModal = React.createClass({
                     this.props.resetPeople(peopleArray.data);
                 }.bind(this));
                 this._notificationSystem.addNotification({
-                    message: 'Added item',
+                    message: 'Added Item',
                     level: 'success',
                     position: 'tr'
                 });
@@ -60,24 +60,20 @@ var AddItemModal = React.createClass({
                         <div className="modal-body">
                             <form onSubmit={this.handleAddItemSubmit}>
                                 <div className="form-group">
-                                    <label >Item name</label>
-                                    <input type="text" className="form-control" name="newItemName" onChange={this.handleAddItemChange} required />
+                                    <input type="text" placeholder="Item Name" className="form-control" name="newItemName" onChange={this.handleAddItemChange} required />
                                 </div>
                                 <div className="form-group">
-                                    <label >Quantity</label>
-                                    <input type="text" className="form-control" name="newItemQuantity" onChange={this.handleAddItemChange} required />
+                                    <input type="text" placeholder="Quantity" className="form-control" name="newItemQuantity" onChange={this.handleAddItemChange} required />
                                 </div>
                                 <div className="form-group">
-                                    <label >Item status</label>
                                     <select className="form-control" name="newItemStatus" onChange={this.handleAddItemChange} required>
-                                        <option value="">Select</option>
+                                        <option value="" disabled selected>Status</option>
                                         <option value="0">Needed</option>
                                         <option value="1">Received</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label >Description</label>
-                                    <textarea rows="4" className="form-control" name="newItemDescription" onChange={this.handleAddItemChange} required />
+                                    <textarea rows="4" placeholder="Item Description" className="form-control" name="newItemDescription" onChange={this.handleAddItemChange} required />
                                 </div>
                                 <button type="submit" className="btn btn-primary">Save</button>
                             </form>

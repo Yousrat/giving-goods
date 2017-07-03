@@ -25,7 +25,7 @@ var AddPeople = React.createClass({
         helper.default.addNewPeople(newUserInfo).then((newUser) => {
             if (newUser) {
                 this._notificationSystem.addNotification({
-                    message: 'New user added',
+                    message: 'New User Added',
                     level: 'success',
                     position: 'tr'
                 });
@@ -50,21 +50,17 @@ var AddPeople = React.createClass({
                      <div className="col-md-6 col-md-offset-3">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
-                                <label>First name</label>
-                                <input type="text" className="form-control" name="newPeopleFirstName" onChange={this.handleChange} required />
+                                <input type="text" placeholder="First Name" className="form-control" name="newPeopleFirstName" onChange={this.handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label >Last name</label>
-                                <input type="text" className="form-control" name="newPeopleLastName" onChange={this.handleChange} required />
+                                <input type="text" placeholder="Last Name" className="form-control" name="newPeopleLastName" onChange={this.handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label>People code</label>
-                                <input type="text" className="form-control" name="newPeopleCode" onChange={this.handleChange} />
+                                <input type="text" placeholder="Case ID" className="form-control" name="newPeopleCode" onChange={this.handleChange} />
                             </div>
                             <div className="form-group">
-                                <label >Age group</label>
                                 <select className="form-control" name="newPeopleAgeGroup" onChange={this.handleChange} required>
-                                    <option value="">Select age group</option>
+                                    <option value="" disabled selected>Age Group</option>
                                     <option value="01-05">01-05</option>
                                     <option value="06-12">06-12</option>
                                     <option value="13-19">13-19</option>
@@ -75,17 +71,15 @@ var AddPeople = React.createClass({
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label >Gender</label>
                                 <select className="form-control" name="newPeopleGender" onChange={this.handleChange} required>
-                                    <option value="">Select Gender</option>
+                                    <option value="" disabled selected>Gender</option>
                                     <option value="Female">Female</option>
                                     <option value="Male">Male</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label>Notes</label>
-                                <textarea rows="4" className="form-control" name="newPeopleNotes" onChange={this.handleChange} />
+                                <textarea rows="4" placeholder="Short Bio" className="form-control" name="newPeopleNotes" onChange={this.handleChange} />
                             </div>
                             <button type="submit" className="btn btn-success" >Submit</button>
                         </form>

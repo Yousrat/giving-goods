@@ -28,7 +28,7 @@ var ManagePeople = React.createClass({
     renderMyPeople: function () {
         if (this.state.myPeopleList.length !== 0) {
             return this.state.myPeopleList.map((people, index) => {
-                var itemTable = <div>No item</div>
+                var itemTable = <div>No Items</div>
                 if (people.items.length !== 0) {
                     var itemRow = people.items.map(function (item, i) {
                         if (item.item_status === 0) {
@@ -75,9 +75,9 @@ var ManagePeople = React.createClass({
                         <div className="col-md-5">
                             <p>{people.person_first_name + " " + people.person_last_name}</p>
                             <p>Gender: {people.gender}</p>
-                            <p>Age group: {people.age_group} </p>
-                            <p>People code: {people.person_code}</p>
-                            <p>Notes: {people.notes}</p>
+                            <p>Age Group: {people.age_group} </p>
+                            <p>Case ID: {people.person_code}</p>
+                            <p>Short Bio: {people.notes}</p>
                             <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#editPeopleModal" onClick={this.setEditPeople.bind(this, people)}>Edit info</button>
                             <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#addItemModal" onClick={this.setAddItem.bind(this, people)}>Add item</button>
                         </div>
@@ -90,7 +90,7 @@ var ManagePeople = React.createClass({
         } else {
             return (
                 <div>
-                    No people
+                    No People
                 </div>
             );
         }
@@ -101,7 +101,7 @@ var ManagePeople = React.createClass({
     render: function () {
         return (
             <div id="manage-people" className="tab-pane fade">
-                Manage people
+                Manage People
                 {this.renderMyPeople()}
                 <EditPeopleModal peopleData={this.state.currentPeople} resetPeople={this.resetMyPeople} />
                 <AddItemModal peopleData={this.state.currentPeopleAddItem} resetPeople={this.resetMyPeople} />

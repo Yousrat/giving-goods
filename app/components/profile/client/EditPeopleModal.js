@@ -37,7 +37,7 @@ var EditPeopleModal = React.createClass({
                     this.props.resetPeople(peopleArray.data);
                 }.bind(this));
                 this._notificationSystem.addNotification({
-                    message: 'Updated peole info',
+                    message: 'Updated Info',
                     level: 'success',
                     position: 'tr'
                 });
@@ -62,21 +62,21 @@ var EditPeopleModal = React.createClass({
                         <div className="modal-body">
                             <form onSubmit={this.handlePeopleEditSubmit}>
                                 <div className="form-group">
-                                    <label>First name</label>
+                                    <label>First Name</label>
                                     <input type="text" className="form-control" name="updatePeopleFirstName" defaultValue={this.state.peopleDetails.person_first_name} onChange={this.handlePeopleEditChange} />
                                 </div>
                                 <div className="form-group">
-                                    <label >Last name</label>
+                                    <label >Last Name</label>
                                     <input type="text" className="form-control" name="updatePeopleLastName" onChange={this.handlePeopleEditChange} />
                                 </div>
                                 <div className="form-group">
-                                    <label>People code</label>
+                                    <label>Case ID</label>
                                     <input type="text" className="form-control" name="updatePeopleCode" onChange={this.handlePeopleEditChange} />
                                 </div>
                                 <div className="form-group">
-                                    <label >Age group</label>
+                                    <label >Age Group</label>
                                     <select className="form-control" name="updatePeopleAgeGroup" onChange={this.handlePeopleEditChange} >
-                                        <option value="">Select age group</option>
+                                        <option value="">Select Age Group</option>
                                         <option value="01-05">01-05</option>
                                         <option value="06-12">06-12</option>
                                         <option value="13-19">13-19</option>
@@ -96,7 +96,7 @@ var EditPeopleModal = React.createClass({
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label>Notes</label>
+                                    <label>Short Bio</label>
                                     <textarea rows="4" className="form-control" name="updatePeopleNotes" onChange={this.handlePeopleEditChange} />
                                 </div>
                                 <button type="submit" className="btn btn-primary">Save</button>
