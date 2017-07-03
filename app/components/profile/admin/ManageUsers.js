@@ -23,7 +23,7 @@ var ManageUsers = React.createClass({
                 this.setState({ allUsersList: allUsersInfo.data });
             });
             this._notificationSystem.addNotification({
-                message: 'Suspended the account',
+                message: 'Suspended the Account',
                 level: 'warning',
                 position: 'tr'
             });
@@ -45,7 +45,7 @@ var ManageUsers = React.createClass({
                 this.setState({ allUsersList: allUsersInfo.data });
             });
             this._notificationSystem.addNotification({
-                message: 'Activated the account',
+                message: 'Activated the Account',
                 level: 'success',
                 position: 'tr'
             });

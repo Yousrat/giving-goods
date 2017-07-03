@@ -28,7 +28,7 @@ var AddUser = React.createClass({
         }).then((myUpdatedInfo) => {
             if (myUpdatedInfo) {
                 this._notificationSystem.addNotification({
-                    message: 'New user added',
+                    message: 'New User Added',
                     level: 'success',
                     position: 'tr'
                 });
@@ -48,22 +48,21 @@ var AddUser = React.createClass({
                
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
+                        <h4>Enter User Details</h4>
+                        <br/>
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
-                                <label htmlFor="newUserEmailId">User Email:</label>
-                                <input type="text" className="form-control" id="newUserEmailId" name="newUserEmailId" onChange={this.handleChange} required />
+                                <input type="text" placeholder="User Email Address" className="form-control" id="newUserEmailId" name="newUserEmailId" onChange={this.handleChange} required />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="newUserPassword">User Role:</label>
                                 <select className="form-control" name="newUserRole" onChange={this.handleChange} required>
-                                    <option value="">Select</option>
+                                    <option value="" disabled selected hidden>User Role</option>
                                     <option value="shelter">Shelter</option>
                                     <option value="admin">Admin</option>
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="newUserPassword">Temporary Password:</label>
-                                <input type="text" className="form-control" id="newUserPassword" name="newUserPassword" onChange={this.handleChange} required />
+                                <input type="text" placeholder="Temporary Password" className="form-control" id="newUserPassword" name="newUserPassword" onChange={this.handleChange} required />
                             </div>
                             <button type="submit" className="btn btn-success" >Submit</button>
                         </form>

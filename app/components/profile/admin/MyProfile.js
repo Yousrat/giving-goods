@@ -37,7 +37,7 @@ var MyProfile = React.createClass({
                     address: userUpdated.data.address
                 });
                 this._notificationSystem.addNotification({
-                    message: 'New information saved',
+                    message: 'New Information Saved',
                     level: 'success',
                     position: 'tr'
                 });
