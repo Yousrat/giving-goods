@@ -20,7 +20,7 @@ var Navbar = React.createClass({
                         </div>
                         <div className="collapse navbar-collapse" id="ggNavbar">
                             <ul className="nav navbar-nav navbar-right">
-                                <li><Link to="/home"><span className="glyphicon glyphicon-home"></span> Home</Link></li>
+                                <li className="active"><Link to="/home"><span className="glyphicon glyphicon-home"></span> Home</Link></li>
                                 <li><Link to="/donate"><span className="glyphicon glyphicon-heart"></span> Donate goods</Link></li>
                                 <li><Link to="#about-us"><span className="glyphicon glyphicon-info-sign"></span> About us</Link></li>
                                 <li><Link to="#contact-us"><span className="glyphicon glyphicon-envelope"></span> Contact us</Link></li>
