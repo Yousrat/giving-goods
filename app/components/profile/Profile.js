@@ -36,9 +36,9 @@ var Profile = React.createClass({
         this.setState(newState);
         if (newState.updateRepeatPassword) {
             if (newState.updateRepeatPassword !== this.state.updatePassword) {
-                this.setState({ passwordMessage: " Password does NOT match" });
+                this.setState({ passwordMessage: " Password Does NOT Match" });
             } else if (newState.updateRepeatPassword === this.state.updatePassword) {
-                this.setState({ passwordMessage: " Password match" });
+                this.setState({ passwordMessage: " Password Match" });
             }
         }
     },
@@ -49,14 +49,14 @@ var Profile = React.createClass({
                 password: this.state.updatePassword
             }).then((user) => {
                 if (!user.data) {
-                    this.setState({ passwordMessage: "Password NOT updated" });
+                    this.setState({ passwordMessage: "Password NOT Updated" });
                 } else {
-                    this.setState({ passwordMessage: "Password updated" });
+                    this.setState({ passwordMessage: "Password Updated" });
                     window.location = "/profile";
                 }
             });
         } else {
-            this.setState({ passwordMessage: "Password NOT updated" });
+            this.setState({ passwordMessage: "Password NOT Updated" });
         }
     },
     renderSettings: function () {
@@ -68,7 +68,7 @@ var Profile = React.createClass({
                 </Link>
                 <ul className="dropdown-menu">
                     <li> <Link to="/home" onClick={this.handleClick}>Logout</Link></li>
-                    <li> <Link data-toggle="modal" data-target="#my-password-edit">Change password</Link></li>
+                    <li> <Link data-toggle="modal" data-target="#my-password-edit">Change Password</Link></li>
                 </ul>
             </div>
         );
@@ -85,11 +85,11 @@ var Profile = React.createClass({
                         <div className="modal-body">
                             <form onSubmit={this.handlePasswordSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="updatePassword">New password</label>
+                                    <label htmlFor="updatePassword">New Password</label>
                                     <input type="password" className="form-control" id="updatePassword" onChange={this.handlePasswordChange} required />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="updateRepeatPassword">Repeat password </label>
+                                    <label htmlFor="updateRepeatPassword">Repeat Password </label>
                                     <input type="password" className="form-control" id="updateRepeatPassword" onChange={this.handlePasswordChange} required />
                                     <small>{this.state.passwordMessage}</small>
                                 </div>
@@ -107,7 +107,7 @@ var Profile = React.createClass({
     renderWarning: function () {
         return (
             <div className="container">
-                Please login
+                Please Login
                 <button><Link to="/shelter">Login</Link></button>
             </div>
         );
