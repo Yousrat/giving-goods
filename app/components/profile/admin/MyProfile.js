@@ -89,22 +89,29 @@ var MyProfile = React.createClass({
                 <div className="row" id="user-profile">
                     <div className="col-md-6 col-md-offset-3">
                         {/*<p class="text-center secondary-heading">Your Information</p>*/}
-                        <table className="table-warning">
-                            <tr>
-                                <td> <b>Name:</b> </td> <td>{this.state.name} </td>
-                            </tr>
-                            <tr>
-                                <td> <b>Role:</b></td> <td> {this.state.role} </td>
-                            </tr>
-                            <tr>
-                                <td> <b>Email:</b> </td> <td> {this.state.emailId} </td>
-                            </tr>
-                            <tr>
-                                <td> <b>Address:</b></td> <td>{this.state.address} </td>
-                            </tr>
-                            <tr>
-                                <td> <b>Location:</b></td> <td>{this.state.location} </td>
-                            </tr>
+                        <table className="table">
+                            <tbody>
+                                <tr className="table-warning">
+                                    <td> <b>Name:</b></td>
+                                    <td>{this.state.name}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Role:</b></td>
+                                    <td>{this.state.role}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Email:</b></td>
+                                    <td>{this.state.emailId}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Address:</b></td>
+                                    <td>{this.state.address}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Location:</b></td>
+                                    <td>{this.state.location}</td>
+                                </tr>
+                            </tbody>
                         </table>
                         <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#my-profile-edit">Edit</button>
                         {this.renderEditModal()}
