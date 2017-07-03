@@ -1,3 +1,8 @@
+
+.btn, .btn-sm{
+    border-radius: 0px;
+}
+
 /* Parent container*/
 
 #main-container {
@@ -167,7 +172,8 @@ padding-top: 50px;
 .people-block {
     margin: 20px;
     padding: 20px;
-    background-color: #fff6f8;
+    background-color: #ececec;
+    border: 5px double white;
 }
 
 #user-profile{
