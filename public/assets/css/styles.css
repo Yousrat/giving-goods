@@ -157,16 +157,43 @@
 }
 .footer{
     text-align: center;
-    padding-top: 2%;
+    padding-top: 1%;
     background-color: black;
-    color: white;
-    padding-right: 20px;
+    color:whitesmoke;
+    padding-right: 30px;
 }
 .footer p,.footer img{
 display: inline-block;
 }
+.footer p {
+    margin-top: 10px;
+}
 #github{
   float: right;
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
+  margin-bottom: 10px;
+  background-color: white;
+    border: solid 2px grey;
+    border-radius: 100%;
+    transition: all 0.3s ease-in-out;
 }
+
+
+#github:hover,
+#github:focus {
+    border: solid 2px white;
+}
+/*.btn-social {
+    
+    
+    display: inline-block;
+    height: 40px;
+    
+    width: 40px;
+}*/
+
+/*.social-stackoverflow {
+    padding: 1px;
+}*/
+
