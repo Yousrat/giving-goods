@@ -7,7 +7,6 @@ var Banner = React.createClass({
             <div className="row" id="banner">
                 <div id="logoSection">
                     <span id="logoText">Giving Goods(s) </span>
-                    <img id="logoImg" src="/assets/images/ggIcon.png" alt="Logo"/>
                 </div>
                 <div id="buttonSection">
                 <div id="btnDiv" className="">
