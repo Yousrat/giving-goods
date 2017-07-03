@@ -40,7 +40,7 @@ var Search = React.createClass({
                         <option value="South Bay">South Bay</option>
                     </select>
                 </div>
-                <button type="submit" className="btn btn-secondary">Submit</button>
+                <button type="submit" className="btn btn-default btn-sm">Submit</button>
             </form>
         );
     }

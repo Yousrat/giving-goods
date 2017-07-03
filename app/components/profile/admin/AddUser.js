@@ -64,7 +64,7 @@ var AddUser = React.createClass({
                             <div className="form-group">
                                 <input type="text" placeholder="Temporary Password" className="form-control" id="newUserPassword" name="newUserPassword" onChange={this.handleChange} required />
                             </div>
-                            <button type="submit" className="btn btn-success" >Submit</button>
+                            <button type="submit" className="btn btn-default btn-sm" >Submit</button>
                         </form>
                     </div>
                 </div>

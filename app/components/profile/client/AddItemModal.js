@@ -75,7 +75,7 @@ var AddItemModal = React.createClass({
                                 <div className="form-group">
                                     <textarea rows="4" placeholder="Item Description" className="form-control" name="newItemDescription" onChange={this.handleAddItemChange} required />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Save</button>
+                                <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
                         </div>
                     </div>

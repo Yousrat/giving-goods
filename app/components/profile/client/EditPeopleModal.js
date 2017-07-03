@@ -99,7 +99,7 @@ var EditPeopleModal = React.createClass({
                                     <label>Short Bio</label>
                                     <textarea rows="4" className="form-control" name="updatePeopleNotes" onChange={this.handlePeopleEditChange} />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Save</button>
+                                <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
                         </div>
                     </div>

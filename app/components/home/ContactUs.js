@@ -47,7 +47,7 @@ var ContactUs = React.createClass({
                                 <div className="form-group">
                                     <textarea placeholder="Your Message" className="form-control" id="clientMessage" onChange={this.handleChange} rows="5" required />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Send</button>
+                                <button type="submit" className="btn btn-default btn-sm">Send</button>
 
                             </form>
                         </div>

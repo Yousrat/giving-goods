@@ -79,7 +79,7 @@ var EditItemModal = React.createClass({
                                     <label>Description</label>
                                     <textarea className="form-control" name="updateItemDescription" onChange={this.handleEditItemChange} rows="3" />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Save</button>
+                                <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
                         </div>
                     </div>

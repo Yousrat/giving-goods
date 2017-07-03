@@ -70,11 +70,11 @@ var MyProfile = React.createClass({
                                     <textarea defaultValue={this.state.address} className="form-control" id="newAddress" onChange={this.handleChange} rows="3" required />
 
                                 </div>
-                                <button type="submit" className="btn btn-primary">Save</button>
+                                <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-default btn-sm" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,6 @@ var MyProfile = React.createClass({
                 <NotificationSystem ref="notificationSystem" />
                 <div className="row" id="user-profile">
                     <div className="col-md-6 col-md-offset-3">
-                        {/*<p class="text-center secondary-heading">Your Information</p>*/}
                         <table className="table">
                             <tbody>
                                 <tr className="table-warning">
@@ -113,7 +112,7 @@ var MyProfile = React.createClass({
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#my-profile-edit">Edit</button>
+                        <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#my-profile-edit">Edit</button>
                         {this.renderEditModal()}
                     </div>
                 </div>

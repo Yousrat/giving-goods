@@ -74,11 +74,11 @@ var ShelterProfile = React.createClass({
                                     <label htmlFor="newShelterAddress">Address</label>
                                     <textarea defaultValue={this.state.address} className="form-control" id="newShelterAddress" name="newShelterAddress" onChange={this.handleChange} rows="3" required />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Save</button>
+                                <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-default btn-sm" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@ var ShelterProfile = React.createClass({
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#shelter-profile-edit">Edit</button>
+                        <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#shelter-profile-edit">Edit</button>
                         {this.renderEditModal()}
                     </div>
                 </div>

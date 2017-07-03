@@ -46,7 +46,7 @@ var Login = React.createClass({
                                 <div className="form-group">
                                     <input type="password" placeholder="Password" className="form-control" id="password" onChange={this.handleChange} required />
                                 </div>
-                                <button type="submit" className="btn btn-primary button-signin">Sign In</button>
+                                <button type="submit" className="btn btn-default btn-sm button-signin">Sign In</button>
                             </form>
                         </div>
                     </div>

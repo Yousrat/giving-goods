@@ -92,7 +92,7 @@ var ListPeople = React.createClass({
                             </table>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-default btn-sm" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ var ListPeople = React.createClass({
                     <div className="form-group">
                         <textarea className="form-control" rows="5" id="donorMessage" placeholder="Message to Shelter" onChange={this.handleChange} required ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-default btn-sm">Submit</button>
                 </form>
         }
         return (
@@ -143,8 +143,8 @@ var ListPeople = React.createClass({
                             <p>Age: {person.age_group}</p>
                             <p>{person.gender}</p>
                             <p>{person.notes}</p>
-                            <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
-                            <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
+                            <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
+                            <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
                         </div>
                     );
                 }

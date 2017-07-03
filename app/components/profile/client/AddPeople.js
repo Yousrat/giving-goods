@@ -81,7 +81,7 @@ var AddPeople = React.createClass({
                             <div className="form-group">
                                 <textarea rows="4" placeholder="Short Bio" className="form-control" name="newPeopleNotes" onChange={this.handleChange} />
                             </div>
-                            <button type="submit" className="btn btn-success" >Submit</button>
+                            <button type="submit" className="btn btn-default btn-sm" >Submit</button>
                         </form>
                     </div>
                 </div>

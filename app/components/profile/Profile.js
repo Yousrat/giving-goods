@@ -93,11 +93,11 @@ var Profile = React.createClass({
                                     <input type="password" className="form-control" id="updateRepeatPassword" onChange={this.handlePasswordChange} required />
                                     <small>{this.state.passwordMessage}</small>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Save</button>
+                                <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-default btn-sm" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
