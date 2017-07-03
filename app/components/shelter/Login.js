@@ -21,7 +21,7 @@ var Login = React.createClass({
         }).then((user) => {
             if (!user) {
                 this._notificationSystem.addNotification({
-                    message: 'Incorrect username/password',
+                    message: 'Incorrect Email/Password',
                     level: 'error',
                     position: 'tr'
                 });
@@ -40,12 +40,10 @@ var Login = React.createClass({
                         <div className="panel-body">
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="username">Username</label>
-                                    <input type="text" placeholder="Enter email-id" className="form-control" id="username" onChange={this.handleChange} required />
+                                    <input type="text" placeholder="Email" className="form-control" id="username" onChange={this.handleChange} required />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="password">Password</label>
-                                    <input type="password" placeholder="Enter password" className="form-control" id="password" onChange={this.handleChange} required />
+                                    <input type="password" placeholder="Password" className="form-control" id="password" onChange={this.handleChange} required />
                                 </div>
                                 <button type="submit" className="btn btn-primary button-signin">Sign In</button>
                             </form>
