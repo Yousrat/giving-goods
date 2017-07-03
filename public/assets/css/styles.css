@@ -16,7 +16,6 @@
 
 .btn,
 .btn-sm {
-    border-radius: 0px;
     margin-right: 2px;
 }
 
@@ -146,6 +145,13 @@ div #login form {
     padding: 20px;
 }
 
+div #login .panel-body {
+    background-color: #ebf0fb;
+}
+
+div #login .panel-default {
+    border: 0px;
+}
 
 /*Donate Section*/
 
@@ -177,8 +183,9 @@ div #login form {
 .people-block {
     margin: 20px;
     padding: 20px;
-    background-color: #ececec;
-    border: 5px double white;
+    background-color: #ebf0fb;
+    border: 7px double white;
+    border-radius: 5px;
 }
 
 #user-profile {
