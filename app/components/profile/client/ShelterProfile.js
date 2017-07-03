@@ -91,6 +91,7 @@ var ShelterProfile = React.createClass({
             <div id="shelter-profile" className="tab-pane fade in active">
                 <NotificationSystem ref="notificationSystem" />
                 <div className="row">
+                    <div className="col-md-6 col-md-offset-3">
 
 <table className="table">
                             <tbody>
@@ -116,8 +117,10 @@ var ShelterProfile = React.createClass({
                                 </tr>
                             </tbody>
                         </table>
+                       
                     <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#shelter-profile-edit">Edit</button>
                     {this.renderEditModal()}
+                     </div>
                 </div>
             </div>
         );

@@ -45,7 +45,7 @@ var AddPeople = React.createClass({
         return (
             <div id="add-people" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
-                Add People
+                
                 <div className="row">
                      <div className="col-md-6 col-md-offset-3">
                         <form onSubmit={this.handleSubmit}>

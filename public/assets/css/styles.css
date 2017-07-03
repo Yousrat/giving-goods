@@ -30,6 +30,18 @@
     padding-top: 50px;
     min-height: 85vh;
 }
+#manage-people{
+padding-top: 50px;
+    min-height: 85vh;
+}
+#add-people{
+padding-top: 50px;
+    min-height: 85vh;
+}
+#login-warning{
+    padding-top: 50px;
+    min-height: 85vh;
+}
 /* Navbar*/
 
 #navImg {
