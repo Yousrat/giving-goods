@@ -41,8 +41,16 @@ var Donate = React.createClass({
             <div className="container" id="donate-container">
                 <div className="row">
                     <div className="col-md-6">
-                        <h3>Here is How You can Help</h3>
-                        <p>Search by item or location to find items needed,once you find items you can donate contact the shelter to discuss delivery.</p>
+                        <h3>Here's How You Can Help!</h3>
+                        <p>
+                            <b>Browse</b> individuals and find someone you connect with!
+                        </p>
+                        <p>
+                            Search by a specific <b>item</b> you would like to give or find those near your <b>location</b>!
+                        </p> 
+                        <p>
+                            Once you find the neighbor you would like to help, <b>contact</b> the shelter directly to donate your item(s)!
+                        </p>
                     </div>
                     <div className="col-md-6" id="search-section">
                         <Search updateSearch={this.setQuery} />
