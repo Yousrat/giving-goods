@@ -69,7 +69,7 @@ var EditItemModal = React.createClass({
                                 </div>
                                 <div className="form-group">
                                     <label >Item status</label>
-                                    <select className="form-control" name="updateItemStatus" onChange={this.handleAddItemChange} required>
+                                    <select className="form-control" name="updateItemStatus" onChange={this.handleEditItemChange} required>
                                         <option value="">Select</option>
                                         <option value="0">Needed</option>
                                         <option value="1">Received</option>

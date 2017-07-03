@@ -16,11 +16,6 @@ var ManageUsers = React.createClass({
         });
         this._notificationSystem = this.refs.notificationSystem;
     },
-    componentDidUpdate:function () {
-        helper.default.getAllUsers().then((allUsersInfo) => {
-            this.setState({ allUsersList: allUsersInfo.data });
-        });
-    },
     handleSuspend: function (userId, event) {
         event.preventDefault();
         helper.default.suspendUser({ id: userId }).then((userInfo) => {
