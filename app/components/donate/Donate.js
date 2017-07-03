@@ -40,10 +40,10 @@ var Donate = React.createClass({
         return (
             <div className="container" id="donate-container">
                 <div className="row">
-                    <h1>Donate Goods</h1>
+                    <h3>Here is How You can Help</h3> <p>Search by item or location to find items needed,once you find items you can donate contact the shelter to discuss delivery.</p>
                 </div>
                 <div className="row">
-                    <div className="col-md-6 col-md-offset-6" id="search-section">
+                    <div className="col-md-6 col-md-offset-3" id="search-section">
                         <Search updateSearch={this.setQuery} />
                     </div>
                     <div className="col-md-12" id="people-list-section">
