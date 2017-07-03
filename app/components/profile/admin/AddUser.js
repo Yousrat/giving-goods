@@ -45,15 +45,16 @@ var AddUser = React.createClass({
         return (
             <div id="add-user" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
-                Add user
+               
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
-                                <label htmlFor="newUserEmailId">User Email-id:</label>
+                                <label htmlFor="newUserEmailId">User Email:</label>
                                 <input type="text" className="form-control" id="newUserEmailId" name="newUserEmailId" onChange={this.handleChange} required />
                             </div>
                             <div className="form-group">
+                                <label htmlFor="newUserPassword">User Role:</label>
                                 <select className="form-control" name="newUserRole" onChange={this.handleChange} required>
                                     <option value="">Select</option>
                                     <option value="shelter">Shelter</option>
@@ -61,7 +62,7 @@ var AddUser = React.createClass({
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="newUserPassword">Temporary password:</label>
+                                <label htmlFor="newUserPassword">Temporary Password:</label>
                                 <input type="text" className="form-control" id="newUserPassword" name="newUserPassword" onChange={this.handleChange} required />
                             </div>
                             <button type="submit" className="btn btn-success" >Submit</button>
