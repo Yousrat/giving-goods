@@ -160,4 +160,13 @@
     padding-top: 2%;
     background-color: black;
     color: white;
+    padding-right: 20px;
+}
+.footer p,.footer img{
+display: inline-block;
+}
+#github{
+  float: right;
+  height: 50px;
+  width: 50px;
 }

@@ -4,6 +4,7 @@ var Footer = React.createClass({
         return (
             <div className="row text-center footer">
                 <p>Copyright &copy; 2017 REMY</p>
+                <img id="github" src="/assets/images/Github.png" alt="Github Code"/>
             </div>
         );
     }
