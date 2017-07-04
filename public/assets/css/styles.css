@@ -19,6 +19,14 @@
     margin-right: 2px;
 }
 
+.table>tbody>tr>td.no-border-top {
+    border-top: 0 none;
+}
+
+.capitalize-name {
+    text-transform: capitalize;
+}
+
 
 /* Parent Container*/
 
@@ -153,6 +161,7 @@ div #login .panel-default {
     border: 0px;
 }
 
+
 /*Donate Section*/
 
 #search-section input,
@@ -169,7 +178,9 @@ div #login .panel-default {
     font-size: 18px;
 }
 
-#people-list-section {}
+#people-list-section hr {
+    margin-bottom: 0px;
+}
 
 #people-list {
     display: flex;
@@ -188,14 +199,16 @@ div #login .panel-default {
     border-radius: 5px;
 }
 
-#user-profile {
-    margin-left: 100px;
-    Margin-top: 50px;
-}
 
-#add-user {
+/*Admin Section*/
+
+#add-user,
+#my-profile {
     padding-top: 50px;
 }
+
+
+/*Footer*/
 
 .footer {
     text-align: center;
