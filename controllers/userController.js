@@ -14,7 +14,8 @@ module.exports = {
             role: req.body.role,
             privilege: req.body.privilege,
             emailId: req.body.emailId,
-            password: bcrypt.hashSync(req.body.password)
+            password: bcrypt.hashSync(req.body.password),
+            location: req.body.location
         };
         User.create(result).then(function (doc) {
             res.json(doc);

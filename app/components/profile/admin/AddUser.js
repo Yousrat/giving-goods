@@ -24,7 +24,8 @@ var AddUser = React.createClass({
             role: this.state.newUserRole,
             privilege: userPrivilege,
             emailId: this.state.newUserEmailId,
-            password: this.state.newUserPassword
+            password: this.state.newUserPassword,
+            location: this.state.newUserLocation
         }).then((myUpdatedInfo) => {
             if (myUpdatedInfo) {
                 this._notificationSystem.addNotification({
@@ -65,6 +66,17 @@ var AddUser = React.createClass({
                             </div>
                             <div className="form-group">
                                 <input type="text" placeholder="Temporary Password" className="form-control" id="newUserPassword" name="newUserPassword" onChange={this.handleChange} required />
+                            </div>
+                            <div className="form-group">
+                                <select className="form-control" id="newUserLocation" name="newUserLocation" onChange={this.handleChange} required>
+                                    <option value="">Select Location</option>
+                                    <option value="North Coast">North Coast</option>
+                                    <option value="North Inland">North Inland</option>
+                                    <option value="Central Coast">Central Coast</option>
+                                    <option value="Central City">Central City</option>
+                                    <option value="East County">East County</option>
+                                    <option value="South Bay">South Bay</option>
+                                </select>
                             </div>
                             <button type="submit" className="btn btn-default btn-sm" >Submit</button>
                         </form>
