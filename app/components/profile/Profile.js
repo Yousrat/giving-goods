@@ -16,6 +16,7 @@ var Profile = React.createClass({
         return {
             loggedInUser: "",
             loggedInUserPeople: "",
+            allUsers: [],
             passwordMessage: ""
         }
     },
@@ -25,6 +26,9 @@ var Profile = React.createClass({
         }.bind(this));
         helpers.default.findMyPeople().then(function (peopleArray) {
             this.setState({ loggedInUserPeople: peopleArray.data });
+        }.bind(this));
+        helpers.default.getAllUsers().then(function (allUsersInfo) {
+            this.setState({ allUsers: allUsersInfo.data });
         }.bind(this));
     },
     handleClick: function (event) {
@@ -63,8 +67,7 @@ var Profile = React.createClass({
         return (
             <div className="dropdown">
                 <Link className="dropdown-toggle" data-toggle="dropdown">
-                    <span className="glyphicon glyphicon-cog"></span> Settings
-                    <span className="caret"></span>
+                    <span className="glyphicon glyphicon-cog"></span> Settings <span className="caret"></span>
                 </Link>
                 <ul className="dropdown-menu">
                     <li> <Link to="/home" onClick={this.handleClick}>Logout</Link></li>
@@ -120,8 +123,8 @@ var Profile = React.createClass({
                 <AdminNavTab />
                 <div className="tab-content">
                     <MyProfile myInfo={this.state.loggedInUser} />
-                    <AddUser />
-                    <ManageUsers myData={this.state.loggedInUser} />
+                    <AddUser resetUsers={this.resetUsers}/>
+                    <ManageUsers usersList={this.state.allUsers} myData={this.state.loggedInUser} />
                 </div>
             </div>
         );
@@ -142,6 +145,9 @@ var Profile = React.createClass({
     },
     resetMyPeople: function (newData) {
         this.setState({ loggedInUserPeople: newData });
+    },
+    resetUsers: function (newData) {
+        this.setState({ allUsers: newData });
     },
     render: function () {
         if (this.state.loggedInUser) {

@@ -32,6 +32,9 @@ var AddUser = React.createClass({
                     level: 'success',
                     position: 'tr'
                 });
+                helper.default.getAllUsers().then(function (allUsersInfo) {
+                    this.props.resetUsers(allUsersInfo.data);
+                }.bind(this));
             } else {
                 this._notificationSystem.addNotification({
                     message: 'Error',
@@ -45,7 +48,6 @@ var AddUser = React.createClass({
         return (
             <div id="add-user" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
-
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <h4>Enter User Details</h4>
