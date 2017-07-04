@@ -57,8 +57,8 @@ var AddUser = React.createClass({
                                 <input type="text" placeholder="User Email Address" className="form-control" id="newUserEmailId" name="newUserEmailId" onChange={this.handleChange} required />
                             </div>
                             <div className="form-group">
-                                <select className="form-control" name="newUserRole" onChange={this.handleChange} required>
-                                    <option value="" disabled>User Role</option>
+                                <select className="form-control" id="newUserRole" name="newUserRole" onChange={this.handleChange} required>
+                                    <option value="">Select Role</option>
                                     <option value="shelter">Shelter</option>
                                     <option value="admin">Admin</option>
                                 </select>
