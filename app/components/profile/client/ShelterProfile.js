@@ -95,8 +95,8 @@ var ShelterProfile = React.createClass({
                         <table className="table">
                             <tbody>
                                 <tr className="table-warning">
-                                    <td> <b>Name:</b></td>
-                                    <td>{this.state.name}</td>
+                                    <td className="no-border-top"> <b>Name:</b></td>
+                                    <td className="no-border-top capitalize-name">{this.state.name}</td>
                                 </tr>
                                 <tr>
                                     <td><b>Role:</b></td>

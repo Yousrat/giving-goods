@@ -138,7 +138,7 @@ var ListPeople = React.createClass({
                 if (person.items.length) {
                     return (
                         <div className="people-block" key={index}>
-                            <p>{person.person_first_name}</p>
+                            <p className="people-name capitalize-name">{person.person_first_name}</p>
                             <p>{person.shelter_id.location}</p>
                             <p>Age: {person.age_group}</p>
                             <p>{person.gender}</p>

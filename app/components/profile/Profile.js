@@ -63,8 +63,7 @@ var Profile = React.createClass({
         return (
             <div className="dropdown">
                 <Link className="dropdown-toggle" data-toggle="dropdown">
-                    <span className="glyphicon glyphicon-cog"></span> Settings
-                    <span className="caret"></span>
+                    <span className="glyphicon glyphicon-cog"></span> Settings <span className="caret"></span>
                 </Link>
                 <ul className="dropdown-menu">
                     <li> <Link to="/home" onClick={this.handleClick}>Logout</Link></li>

@@ -46,12 +46,6 @@
     min-height: 85vh;
 }
 
-#shelter-profile,
-#manage-people,
-#add-people {
-    padding-top: 50px;
-}
-
 
 /* Navbar*/
 
@@ -200,11 +194,72 @@ div #login .panel-default {
 }
 
 
-/*Admin Section*/
+/*Admin Section & Shelter Section*/
 
+#my-profile,
 #add-user,
-#my-profile {
+#shelter-profile,
+#add-people {
     padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.people-name {
+    font-size: 120%;
+}
+
+#admin-container .people-block {
+    margin: 20px;
+    padding: 20px;
+    border: 1px double #eae9dc;
+    border-radius: 2px;
+    background-color: white;
+}
+
+#shelter-container div.dropdown,
+#admin-container div.dropdown {
+    float: right;
+    margin-top: -35px;
+    margin-right: 60px;
+}
+
+#shelter-container div.dropdown a,
+#admin-container div.dropdown a {
+    color: black;
+}
+
+#shelter-container ul.nav-tabs,
+#admin-container ul.nav-tabs {
+    border-bottom: 0 none;
+}
+
+#shelter-container ul.nav-tabs,
+#admin-container ul.nav-tabs {
+    background-color: #949393;
+}
+
+#shelter-container .nav-tabs>li,
+#admin-container .nav-tabs>li {
+    margin-bottom: 0;
+}
+
+#shelter-container .nav-tabs>li>a,
+#admin-container .nav-tabs>li>a {
+    height: 50px;
+    border: 0 none;
+    color: black;
+    border-radius: 0;
+    line-height: 2;
+}
+
+#shelter-container .nav-tabs>li.active>a,
+#shelter-container .nav-tabs>li.active>a:hover,
+#shelter-container .nav-tabs>li.active>a:focus,
+#admin-container .nav-tabs>li.active>a,
+#admin-container .nav-tabs>li.active>a:hover,
+#admin-container .nav-tabs>li.active>a:focus {
+    color: #ead314;
+    background-color: #555;
 }
 
 
