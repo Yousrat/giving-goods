@@ -82,7 +82,7 @@ var ManageUsers = React.createClass({
             <div id="manage-user" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
                 <div className="row">
-                    <div id="people-list">
+                    <div className="people-list">
                         {this.renderUsers()}
                     </div>
                 </div>

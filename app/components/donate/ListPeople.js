@@ -159,7 +159,7 @@ var ListPeople = React.createClass({
     },
     render: function () {
         return (
-            <div id="people-list">
+            <div className="people-list">
                 <NotificationSystem ref="notificationSystem" />
                 {this.renderPeople()}
                 {this.renderPersonModal()}

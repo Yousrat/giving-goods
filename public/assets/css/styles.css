@@ -176,7 +176,7 @@ div #login .panel-default {
     margin-bottom: 0px;
 }
 
-#people-list {
+.people-list {
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
@@ -220,7 +220,7 @@ div #login .panel-default {
 }
 
 #shelter-container .people-block {
-    margin: 0px auto 20px;
+    margin: 0px 10px 20px;
     border: 1px double #e4e4e4;
     border-radius: 2px;
     background-color: white;
