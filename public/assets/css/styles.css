@@ -201,12 +201,10 @@ div #login .panel-default {
 
 /*Admin Section & Shelter Section*/
 
-#my-profile,
-#add-user,
-#shelter-profile,
-#add-people {
-    padding-top: 50px;
-    padding-bottom: 50px;
+#shelter-container .tab-content,
+#admin-container .tab-content
+{
+    padding: 50px;
 }
 
 .people-name {
@@ -217,6 +215,13 @@ div #login .panel-default {
     margin: 20px;
     padding: 20px;
     border: 1px double #eae9dc;
+    border-radius: 2px;
+    background-color: white;
+}
+
+#shelter-container .people-block {
+    margin: 0px auto 20px;
+    border: 1px double #e4e4e4;
     border-radius: 2px;
     background-color: white;
 }
