@@ -57,7 +57,7 @@ var EditPeopleModal = React.createClass({
                     <div className="modal-content">
                         <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">Edit {this.state.peopleDetails.person_first_name + " " + this.state.peopleDetails.person_last_name + "'s"} Information</h4>
+                            <h4 className="modal-title">Edit <span className="capitalize-name">{this.state.peopleDetails.person_first_name + " " + this.state.peopleDetails.person_last_name + "'s"} </span>Information</h4>
                         </div>
                         <div className="modal-body">
                             <form onSubmit={this.handlePeopleEditSubmit}>

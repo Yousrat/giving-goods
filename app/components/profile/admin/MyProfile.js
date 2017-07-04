@@ -86,13 +86,13 @@ var MyProfile = React.createClass({
         return (
             <div id="my-profile" className="tab-pane fade in active">
                 <NotificationSystem ref="notificationSystem" />
-                <div className="row" id="user-profile">
+                <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <table className="table">
                             <tbody>
                                 <tr className="table-warning">
-                                    <td> <b>Name:</b></td>
-                                    <td>{this.state.name}</td>
+                                    <td className="no-border-top"> <b>Name:</b></td>
+                                    <td className="no-border-top capitalize-name">{this.state.name}</td>
                                 </tr>
                                 <tr>
                                     <td><b>Role:</b></td>

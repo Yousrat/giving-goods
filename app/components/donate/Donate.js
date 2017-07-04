@@ -47,7 +47,7 @@ var Donate = React.createClass({
                         </p>
                         <p>
                             Search by a specific <b>item</b> you would like to give or find those near your <b>location</b>!
-                        </p> 
+                        </p>
                         <p>
                             Once you find the neighbor you would like to help, <b>contact</b> the shelter directly to donate your item(s)!
                         </p>
@@ -56,6 +56,7 @@ var Donate = React.createClass({
                         <Search updateSearch={this.setQuery} />
                     </div>
                     <div className="col-md-12" id="people-list-section">
+                        <hr />
                         <ListPeople peopleList={this.state.peopleList} />
                     </div>
                 </div>
