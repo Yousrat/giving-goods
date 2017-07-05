@@ -137,14 +137,16 @@ var ListPeople = React.createClass({
             return this.state.allPeopleList.map((person, index) => {
                 if (person.items.length) {
                     return (
-                        <div className="people-block" key={index}>
-                            <p className="people-name capitalize-name">{person.person_first_name}</p>
-                            <p>{person.shelter_id.location}</p>
-                            <p>Age: {person.age_group}</p>
-                            <p>{person.gender}</p>
-                            <p>{person.notes}</p>
-                            <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
-                            <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
+                        <div className="col-md-3 col-sm-4" key={index}>
+                            <div className="people-block clearfix">
+                                <p className="people-name capitalize-name">{person.person_first_name}</p>
+                                <p>{person.shelter_id.location}</p>
+                                <p>Age: {person.age_group}</p>
+                                <p>{person.gender}</p>
+                                <p>{person.notes}</p>
+                                <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
+                                <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
+                            </div>
                         </div>
                     );
                 }
@@ -159,7 +161,7 @@ var ListPeople = React.createClass({
     },
     render: function () {
         return (
-            <div className="people-list">
+            <div>
                 <NotificationSystem ref="notificationSystem" />
                 {this.renderPeople()}
                 {this.renderPersonModal()}

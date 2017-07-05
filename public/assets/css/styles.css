@@ -27,6 +27,10 @@
     text-transform: capitalize;
 }
 
+.item-table {
+    overflow-x: scroll;
+}
+
 
 /* Parent Container*/
 
@@ -172,10 +176,6 @@ div #login .panel-default {
     font-size: 18px;
 }
 
-#people-list-section hr {
-    margin-bottom: 0px;
-}
-
 .people-list {
     display: flex;
     display: -webkit-flex;
@@ -192,18 +192,26 @@ div #login .panel-default {
     border: 7px double white;
     border-radius: 5px;
 }
-.people-bio{
+
+#people-list-section .people-block {
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #ebf0fb;
+    border: 7px double white;
+    border-radius: 5px;
+}
+
+.people-bio {
     max-width: 215px;
     word-wrap: break-word;
-    overflow-y: scroll; 
+    overflow-y: scroll;
 }
 
 
 /*Admin Section & Shelter Section*/
 
 #shelter-container .tab-content,
-#admin-container .tab-content
-{
+#admin-container .tab-content {
     padding: 50px;
 }
 
@@ -224,6 +232,17 @@ div #login .panel-default {
     border: 1px double #e4e4e4;
     border-radius: 2px;
     background-color: white;
+}
+
+#shelter-container .manage-people-block {
+    margin: 0px auto 30px;
+    padding: 20px;
+    border: 1px solid #e4e4e4;
+    border-radius: 2px;
+}
+
+.people-image {
+    max-height: 200px;
 }
 
 #shelter-container div.dropdown,
