@@ -19,6 +19,9 @@ var peopleSchema = new Schema({
     person_code: {
         type: String
     },
+    person_image: {
+        type: String
+    },
     age_group: {
         type: String,
         required: true

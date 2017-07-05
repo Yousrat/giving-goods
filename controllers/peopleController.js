@@ -29,6 +29,7 @@ module.exports = {
             person_last_name: req.body.lastName,
             shelter_id: req.user._id,
             person_code: req.body.peopleCode,
+            person_image: req.body.peopleImage,
             age_group: req.body.ageGroup,
             gender: req.body.gender,
             notes: req.body.peopleNotes
@@ -44,6 +45,7 @@ module.exports = {
             person_first_name: req.body.firstName,
             person_last_name: req.body.lastName,
             person_code: req.body.peopleCode,
+            person_image: req.body.peopleImage,
             age_group: req.body.ageGroup,
             gender: req.body.gender,
             notes: req.body.peopleNotes

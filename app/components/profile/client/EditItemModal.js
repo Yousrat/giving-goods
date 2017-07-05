@@ -47,6 +47,12 @@ var EditItemModal = React.createClass({
                 });
             }
         });
+        this.setState({
+            updateItemName: "",
+            updateItemQuantity: "",
+            updateItemStatus: "",
+            updateItemDescription: ""
+        });
     },
     renderEditItemModal: function () {
         return (
@@ -58,26 +64,27 @@ var EditItemModal = React.createClass({
                             <h4 className="modal-title">Update item</h4>
                         </div>
                         <div className="modal-body">
-                            <form onSubmit={this.handleEditItemSubmit}>
+                            <form id="edit-item-form" onSubmit={this.handleEditItemSubmit}>
                                 <div className="form-group">
                                     <label>Item Name</label>
-                                    <input type="text" className="form-control" name="updateItemName" onChange={this.handleEditItemChange} />
+                                    <input type="text" className="form-control" name="updateItemName" id="updateItemName" defaultValue={this.state.itemDetails.item_name} onChange={this.handleEditItemChange} />
                                 </div>
                                 <div className="form-group">
                                     <label>Quantity</label>
-                                    <input type="text" className="form-control" name="updateItemQuantity" onChange={this.handleEditItemChange} />
+                                    <input type="text" className="form-control" name="updateItemQuantity" id="updateItemQuantity" defaultValue={this.state.itemDetails.quantity} onChange={this.handleEditItemChange} />
                                 </div>
                                 <div className="form-group">
                                     <label >Item Status</label>
-                                    <select className="form-control" name="updateItemStatus" onChange={this.handleEditItemChange} required>
+                                    <select className="form-control" name="updateItemStatus" id="updateItemStatus" defaultValue={this.state.itemDetails.item_status} onChange={this.handleEditItemChange} required>
                                         <option value="">Select</option>
                                         <option value="0">Needed</option>
                                         <option value="1">Received</option>
                                     </select>
+                                    <small className="text-danger"> * Required </small>
                                 </div>
                                 <div className="form-group">
                                     <label>Description</label>
-                                    <textarea className="form-control" name="updateItemDescription" onChange={this.handleEditItemChange} rows="3" />
+                                    <textarea className="form-control" name="updateItemDescription" id="updateItemDescription" defaultValue={this.state.itemDetails.description} onChange={this.handleEditItemChange} rows="3" />
                                 </div>
                                 <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
