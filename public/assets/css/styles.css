@@ -31,6 +31,12 @@
     overflow-x: scroll;
 }
 
+#about-us h2, 
+#contact-us h2, 
+#login h2 {
+    font-family: 'Podkova', serif;
+    font-weight: 600;
+}
 
 /* Parent Container*/
 
@@ -85,7 +91,7 @@
 }
 
 #logoText {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Podkova', serif;
     font-size: 60px;
 }
 
@@ -136,7 +142,7 @@
 }
 
 #contact-us {
-    background-color: #eaeaea;
+    background-color: #ebf0fb;
     margin: auto -30px auto -30px;
 }
 

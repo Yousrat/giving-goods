@@ -34,7 +34,7 @@ var ContactUs = React.createClass({
             <div className="row" id="contact-us">
                 <NotificationSystem ref="notificationSystem" />
                 <div className="col-md-6 col-md-offset-3">
-                    <h3>Contact Giving Good(s)</h3>
+                    <h2>Contact Giving Good(s)</h2>
                     <div className=" panel panel-default">
                         <div className="panel-body" id="contact-us-panel">
                             <form onSubmit={this.handleSubmit}>

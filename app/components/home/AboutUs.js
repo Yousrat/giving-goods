@@ -5,7 +5,7 @@ var AboutUs = React.createClass({
             <div id="about-us" className="row">
                 <div className="container-fluid">
                     <div id="about-text" className="col-md-7">
-                        <h3>About Us</h3>
+                        <h2>About Us</h2>
                         <p>
                             Homelessness and housing insecurity are prevalent issues in San Diego County.
                             According to a <a href="http://www.rtfhsd.org/wp/wp-content/uploads/2017/06/comp-report-final.pdf" target="_blank"> report </a> by the Regional Homeless Task Force in San Diego, in the January 27 count,

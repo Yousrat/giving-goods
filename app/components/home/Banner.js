@@ -6,7 +6,7 @@ var Banner = React.createClass({
         return (
             <div className="row" id="banner">
                 <div id="logoSection">
-                    <span id="logoText">Giving Goods(s) </span>
+                    <span id="logoText">Giving Good(s) </span>
                 </div>
                 <div id="buttonSection">
                     <div id="btnDiv" className="">
