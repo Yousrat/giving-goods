@@ -6,7 +6,7 @@ var ManageUsers = React.createClass({
     _notificationSystem: null,
     getInitialState: function () {
         return {
-            allUsersList:this.props.usersList,
+            allUsersList: this.props.usersList,
             myId: this.props.myData._id
         }
     },
@@ -53,24 +53,28 @@ var ManageUsers = React.createClass({
             if (user._id !== this.state.myId) {
                 if (user.privilege === 3) {
                     return (
-                        <div className="people-block" key={index}>
-                            <p><b>Role: </b>{user.role}</p>
-                            <p className="capitalize-name"><b>Name: </b>{user.name}</p>
-                            <p><b>Emaid-id: </b>{user.emailId}</p>
-                            <p><b>Location: </b>{user.location}</p>
-                            <p><b>Address: </b>{user.address}</p>
-                            <p><span className="label label-danger" onClick={this.handleActivate.bind(this, user)}>Activate</span></p>
+                        <div className="col-md-3" key={index}>
+                            <div className="people-block" >
+                                <p className="pull-right"><span className="label label-danger" onClick={this.handleActivate.bind(this, user)}>Activate</span></p>
+                                <p><b>Role: </b>{user.role}</p>
+                                <p className="capitalize-name"><b>Name: </b>{user.name}</p>
+                                <p><b>Emaid-id: </b>{user.emailId}</p>
+                                <p><b>Location: </b>{user.location}</p>
+                                <p><b>Address: </b>{user.address}</p>
+                            </div>
                         </div>
                     );
                 } else {
                     return (
-                        <div className="people-block" key={index}>
-                            <p><b>Role: </b>{user.role}</p>
-                            <p className="capitalize-name"><b>Name: </b>{user.name}</p>
-                            <p><b>Emaid-id: </b>{user.emailId}</p>
-                            <p><b>Location: </b>{user.location}</p>
-                            <p><b>Address: </b>{user.address}</p>
-                            <p><span className="label label-default" onClick={this.handleSuspend.bind(this, user._id)}>Suspend</span></p>
+                        <div className="col-md-3" key={index}>
+                            <div className="people-block" >
+                                <p className="pull-right"><span className="label label-default" onClick={this.handleSuspend.bind(this, user._id)}>Suspend</span></p>
+                                <p><b>Role: </b>{user.role}</p>
+                                <p className="capitalize-name"><b>Name: </b>{user.name}</p>
+                                <p><b>Emaid-id: </b>{user.emailId}</p>
+                                <p><b>Location: </b>{user.location}</p>
+                                <p><b>Address: </b>{user.address}</p>
+                            </div>
                         </div>
                     );
                 }
@@ -82,9 +86,7 @@ var ManageUsers = React.createClass({
             <div id="manage-user" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
                 <div className="row">
-                    <div className="people-list">
-                        {this.renderUsers()}
-                    </div>
+                    {this.renderUsers()}
                 </div>
             </div>
         );

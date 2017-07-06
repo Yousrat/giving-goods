@@ -74,10 +74,11 @@ var ListPeople = React.createClass({
                     <div className="modal-content">
                         <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">{this.state.currentPerson.person_first_name}</h4>
-                            <p>{this.state.currentPerson.gender + ", " + this.state.currentPerson.age_group + " years old"}</p>
+                            <h4 className="text-capitalize modal-title">{this.state.currentPerson.person_first_name}</h4>
+                            <p className="text-capitalize">{this.state.currentPerson.gender + ", " + this.state.currentPerson.age_group + " years old"}</p>
                         </div>
                         <div className="modal-body">
+                            <p>{this.state.currentPerson.notes}</p><br/>
                             <table className="table table-hover">
                                 <thead>
                                     <tr>
@@ -139,13 +140,15 @@ var ListPeople = React.createClass({
                     return (
                         <div className="col-md-3 col-sm-4" key={index}>
                             <div className="people-block clearfix">
-                                <p className="people-name capitalize-name">{person.person_first_name}</p>
-                                <p>{person.shelter_id.location}</p>
-                                <p>Age: {person.age_group}</p>
-                                <p>{person.gender}</p>
-                                <p>{person.notes}</p>
-                                <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
-                                <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button>
+                                <p className="people-name capitalize-name"><b>{person.person_first_name}</b></p>
+                                <p><b>Location: </b>{person.shelter_id.location}</p>
+                                <p><b>Age: </b>{person.age_group}</p>
+                                <p><b>Gender: </b>{person.gender}</p>
+                                
+                                <p><button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
+                                <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button></p>
+
+                                <p><b>Bio: </b>{person.notes}</p>
                             </div>
                         </div>
                     );
