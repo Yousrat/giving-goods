@@ -55,10 +55,17 @@ var Donate = React.createClass({
                     <div className="col-md-6" id="search-section">
                         <Search updateSearch={this.setQuery} />
                     </div>
+<<<<<<< HEAD
                     <div className="col-md-12" id="people-list-section">
                         <hr />
                         <ListPeople peopleList={this.state.peopleList} />
                     </div>
+=======
+                </div>
+                <div className="row" id="people-list-section">
+                    <hr />
+                    <ListPeople peopleList={this.state.peopleList} />
+>>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
                 </div>
             </div>
         );

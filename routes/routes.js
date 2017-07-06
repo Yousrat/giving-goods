@@ -38,7 +38,7 @@ passport.use('local-signin', new LocalStrategy({
       console.log('User Not Found with username ');
       return done(null, false, { message: 'Incorrect username.' });
     }
-    if (!bcrypt.compareSync(password, user.password)){
+    if (!bcrypt.compareSync(password, user.password)) {
       console.log('Invalid Password');
       return done(null, false, { message: 'Incorrect Password.' });
     }
@@ -56,8 +56,9 @@ router.post('/login', passport.authenticate('local-signin'), function (req, res)
 });
 
 router.get('/logout', function (req, res) {
-  req.session.destroy();
   req.logout();
+  req.session.destroy();
+  res.redirect('/');
 });
 
 router.post('/contact-admin', function (req, res) {

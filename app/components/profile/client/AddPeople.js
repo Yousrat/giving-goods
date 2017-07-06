@@ -18,6 +18,7 @@ var AddPeople = React.createClass({
             firstName: this.state.newPeopleFirstName,
             lastName: this.state.newPeopleLastName,
             peopleCode: this.state.newPeopleCode,
+            peopleImage: this.state.newPeopleImage,
             ageGroup: this.state.newPeopleAgeGroup,
             gender: this.state.newPeopleGender,
             peopleNotes: this.state.newPeopleNotes
@@ -40,6 +41,7 @@ var AddPeople = React.createClass({
                 });
             }
         });
+        document.getElementById("add-people-form").reset();
     },
     render: function () {
         return (
@@ -48,7 +50,7 @@ var AddPeople = React.createClass({
 
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
-                        <form onSubmit={this.handleSubmit}>
+                        <form id="add-people-form" onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <input type="text" placeholder="First Name" className="form-control" name="newPeopleFirstName" onChange={this.handleChange} required />
                             </div>
@@ -59,8 +61,11 @@ var AddPeople = React.createClass({
                                 <input type="text" placeholder="Case ID" className="form-control" name="newPeopleCode" onChange={this.handleChange} />
                             </div>
                             <div className="form-group">
+                                <input type="text" placeholder="Image URL" className="form-control" name="newPeopleImage" onChange={this.handleChange} />
+                            </div>
+                            <div className="form-group">
                                 <select className="form-control" name="newPeopleAgeGroup" onChange={this.handleChange} required>
-                                    <option value="" disabled>Age Group</option>
+                                    <option value="">Age Group</option>
                                     <option value="01-05">01-05</option>
                                     <option value="06-12">06-12</option>
                                     <option value="13-19">13-19</option>
@@ -72,7 +77,7 @@ var AddPeople = React.createClass({
                             </div>
                             <div className="form-group">
                                 <select className="form-control" name="newPeopleGender" onChange={this.handleChange} required>
-                                    <option value="" disabled>Gender</option>
+                                    <option value="">Gender</option>
                                     <option value="Female">Female</option>
                                     <option value="Male">Male</option>
                                     <option value="Other">Other</option>

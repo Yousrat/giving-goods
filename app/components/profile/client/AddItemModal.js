@@ -47,6 +47,7 @@ var AddItemModal = React.createClass({
                 });
             }
         });
+        document.getElementById("add-item-form").reset();
     },
     renderAddItemModal: function () {
         return (
@@ -58,7 +59,7 @@ var AddItemModal = React.createClass({
                             <h4 className="modal-title">Add item</h4>
                         </div>
                         <div className="modal-body">
-                            <form onSubmit={this.handleAddItemSubmit}>
+                            <form id="add-item-form" onSubmit={this.handleAddItemSubmit}>
                                 <div className="form-group">
                                     <input type="text" placeholder="Item Name" className="form-control" name="newItemName" onChange={this.handleAddItemChange} required />
                                 </div>
@@ -67,7 +68,7 @@ var AddItemModal = React.createClass({
                                 </div>
                                 <div className="form-group">
                                     <select className="form-control" name="newItemStatus" onChange={this.handleAddItemChange} required>
-                                        <option value="" disabled>Status</option>
+                                        <option value="">Status</option>
                                         <option value="0">Needed</option>
                                         <option value="1">Received</option>
                                     </select>

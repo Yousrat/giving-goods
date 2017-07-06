@@ -27,6 +27,13 @@
     text-transform: capitalize;
 }
 
+<<<<<<< HEAD
+=======
+.item-table {
+    overflow-x: scroll;
+}
+
+>>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
 
 /* Parent Container*/
 
@@ -172,11 +179,15 @@ div #login .panel-default {
     font-size: 18px;
 }
 
+<<<<<<< HEAD
 #people-list-section hr {
     margin-bottom: 0px;
 }
 
 #people-list {
+=======
+.people-list {
+>>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
@@ -193,6 +204,7 @@ div #login .panel-default {
     border-radius: 5px;
 }
 
+<<<<<<< HEAD
 
 /*Admin Section & Shelter Section*/
 
@@ -202,6 +214,28 @@ div #login .panel-default {
 #add-people {
     padding-top: 50px;
     padding-bottom: 50px;
+=======
+#people-list-section .people-block {
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #ebf0fb;
+    border: 7px double white;
+    border-radius: 5px;
+}
+
+.people-bio {
+    max-width: 215px;
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+
+
+/*Admin Section & Shelter Section*/
+
+#shelter-container .tab-content,
+#admin-container .tab-content {
+    padding: 5%;
+>>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
 }
 
 .people-name {
@@ -216,11 +250,33 @@ div #login .panel-default {
     background-color: white;
 }
 
+<<<<<<< HEAD
+=======
+#shelter-container .people-block {
+    margin: 0px 10px 20px;
+    border: 1px double #e4e4e4;
+    border-radius: 2px;
+    background-color: white;
+}
+
+#shelter-container .manage-people-block {
+    margin: 0px auto 30px;
+    padding: 15px 5px;
+    border: 1px solid #e4e4e4;
+    border-radius: 2px;
+}
+
+.people-image {
+    max-height: 200px;
+}
+
+>>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
 #shelter-container div.dropdown,
 #admin-container div.dropdown {
     float: right;
     margin-top: -35px;
     margin-right: 60px;
+<<<<<<< HEAD
 }
 
 #shelter-container div.dropdown a,
@@ -233,6 +289,20 @@ div #login .panel-default {
     border-bottom: 0 none;
 }
 
+=======
+}
+
+#shelter-container div.dropdown a,
+#admin-container div.dropdown a {
+    color: black;
+}
+
+#shelter-container ul.nav-tabs,
+#admin-container ul.nav-tabs {
+    border-bottom: 0 none;
+}
+
+>>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
 #shelter-container ul.nav-tabs,
 #admin-container ul.nav-tabs {
     background-color: #949393;
@@ -260,6 +330,12 @@ div #login .panel-default {
 #admin-container .nav-tabs>li.active>a:focus {
     color: #ead314;
     background-color: #555;
+<<<<<<< HEAD
+=======
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+    box-shadow: inset 0px 0px 31px 1px rgba(0,0,0,0.75);
+>>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
 }
 
 
@@ -296,4 +372,20 @@ div #login .panel-default {
 #github:hover,
 #github:focus {
     border: solid 2px white;
+}
+
+
+@media screen and (max-width: 500px) {
+    .manage-people-block .people-image-section, 
+    .manage-people-block .people-info-section {
+        width: 100%;
+    }
+    #shelter-container .nav-tabs>li>a, #admin-container .nav-tabs>li>a {
+        height: 35px;
+        line-height: 1;
+        font-size: 80%;
+    }
+    #shelter-container .nav-tabs>li, #admin-container .nav-tabs>li {
+        width: 100%;
+    }
 }

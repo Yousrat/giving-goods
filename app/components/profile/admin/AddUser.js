@@ -24,7 +24,8 @@ var AddUser = React.createClass({
             role: this.state.newUserRole,
             privilege: userPrivilege,
             emailId: this.state.newUserEmailId,
-            password: this.state.newUserPassword
+            password: this.state.newUserPassword,
+            location: this.state.newUserLocation
         }).then((myUpdatedInfo) => {
             if (myUpdatedInfo) {
                 this._notificationSystem.addNotification({
@@ -32,6 +33,9 @@ var AddUser = React.createClass({
                     level: 'success',
                     position: 'tr'
                 });
+                helper.default.getAllUsers().then(function (allUsersInfo) {
+                    this.props.resetUsers(allUsersInfo.data);
+                }.bind(this));
             } else {
                 this._notificationSystem.addNotification({
                     message: 'Error',
@@ -54,14 +58,25 @@ var AddUser = React.createClass({
                                 <input type="text" placeholder="User Email Address" className="form-control" id="newUserEmailId" name="newUserEmailId" onChange={this.handleChange} required />
                             </div>
                             <div className="form-group">
-                                <select className="form-control" name="newUserRole" onChange={this.handleChange} required>
-                                    <option value="" disabled>User Role</option>
+                                <select className="form-control" id="newUserRole" name="newUserRole" onChange={this.handleChange} required>
+                                    <option value="">Select Role</option>
                                     <option value="shelter">Shelter</option>
                                     <option value="admin">Admin</option>
                                 </select>
                             </div>
                             <div className="form-group">
                                 <input type="text" placeholder="Temporary Password" className="form-control" id="newUserPassword" name="newUserPassword" onChange={this.handleChange} required />
+                            </div>
+                            <div className="form-group">
+                                <select className="form-control" id="newUserLocation" name="newUserLocation" onChange={this.handleChange} required>
+                                    <option value="">Select Location</option>
+                                    <option value="North Coast">North Coast</option>
+                                    <option value="North Inland">North Inland</option>
+                                    <option value="Central Coast">Central Coast</option>
+                                    <option value="Central City">Central City</option>
+                                    <option value="East County">East County</option>
+                                    <option value="South Bay">South Bay</option>
+                                </select>
                             </div>
                             <button type="submit" className="btn btn-default btn-sm" >Submit</button>
                         </form>

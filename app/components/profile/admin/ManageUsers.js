@@ -6,15 +6,12 @@ var ManageUsers = React.createClass({
     _notificationSystem: null,
     getInitialState: function () {
         return {
-            allUsersList: [],
+            allUsersList:this.props.usersList,
             myId: this.props.myData._id
         }
     },
-    componentDidMount: function () {
-        helper.default.getAllUsers().then((allUsersInfo) => {
-            this.setState({ allUsersList: allUsersInfo.data });
-        });
-        this._notificationSystem = this.refs.notificationSystem;
+    componentWillReceiveProps: function (nextProps) {
+        this.setState({ allUsersList: nextProps.usersList });
     },
     handleSuspend: function (userId, event) {
         event.preventDefault();
@@ -85,7 +82,7 @@ var ManageUsers = React.createClass({
             <div id="manage-user" className="tab-pane fade">
                 <NotificationSystem ref="notificationSystem" />
                 <div className="row">
-                    <div id="people-list">
+                    <div className="people-list">
                         {this.renderUsers()}
                     </div>
                 </div>

@@ -11,13 +11,17 @@ module.exports = {
         });
     },
     myPeople: function (req, res) {
-        People.find({
-            'shelter_id': req.user._id
-        }).populate('items').then(function (doc) {
-            res.json(doc);
-        }).catch(function (err) {
-            res.json(err);
-        });
+        if (req.user) {
+            People.find({
+                'shelter_id': req.user._id
+            }).populate('items').then(function (doc) {
+                res.json(doc);
+            }).catch(function (err) {
+                res.json(err);
+            });
+        } else {
+            res.json(false);
+        }
     },
     addPeople: function (req, res) {
         var newPerson = {
@@ -25,6 +29,7 @@ module.exports = {
             person_last_name: req.body.lastName,
             shelter_id: req.user._id,
             person_code: req.body.peopleCode,
+            person_image: req.body.peopleImage,
             age_group: req.body.ageGroup,
             gender: req.body.gender,
             notes: req.body.peopleNotes
@@ -40,6 +45,7 @@ module.exports = {
             person_first_name: req.body.firstName,
             person_last_name: req.body.lastName,
             person_code: req.body.peopleCode,
+            person_image: req.body.peopleImage,
             age_group: req.body.ageGroup,
             gender: req.body.gender,
             notes: req.body.peopleNotes
