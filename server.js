@@ -20,7 +20,7 @@ app.use(passport.session());
 var routes = require("./routes/routes");
 app.use("/", routes);
 
-var db = "mongodb://localhost/givingGoodsApp";
+var db = "mongodb://heroku_qwcxn1pp:2218m91ki7ieu9vsnkcj35dhma@ds139879.mlab.com:39879/heroku_qwcxn1pp" || "mongodb://localhost/givingGoodsApp"
 
 mongoose.connect(db, function (error) {
   if (error) {
