@@ -94,7 +94,7 @@ var Profile = React.createClass({
                                 <div className="form-group">
                                     <label htmlFor="updateRepeatPassword">Repeat Password </label>
                                     <input type="password" className="form-control" id="updateRepeatPassword" onChange={this.handlePasswordChange} required />
-                                    <small>{this.state.passwordMessage}</small>
+                                    <small className="text-warning">{this.state.passwordMessage}</small>
                                 </div>
                                 <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>

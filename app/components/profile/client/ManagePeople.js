@@ -28,12 +28,12 @@ var ManagePeople = React.createClass({
         this.setState({ currentItemUpdate: item });
     },
     addDefaultSrc: function (e) {
-        e.target.src = 'https://i.stack.imgur.com/WmvM0.png'
+        e.target.src = '/assets/images/defaultProImage.png'
     },
     renderMyPeople: function () {
         if (this.state.myPeopleList.length !== 0) {
             return this.state.myPeopleList.map((people, index) => {
-                var itemTable = <div>No Items</div>
+                var itemTable = <div className="no-result">No Items</div>
                 if (people.items.length !== 0) {
                     var itemRow = people.items.map(function (item, i) {
                         if (item.item_status === 0) {
@@ -79,13 +79,13 @@ var ManagePeople = React.createClass({
                 if (people.person_image) {
                     proImage = people.person_image;
                 } else {
-                    proImage = "https://i.stack.imgur.com/WmvM0.png";
+                    proImage = "/assets/images/defaultProImage.png";
                 }
                 return (
                     <div className="col-md-6" key={index}>
                         <div className="manage-people-block clearfix">
                             <div className="col-md-6 col-sm-5 col-xs-5 people-image-section">
-                                <img className="img-responsive people-image" src={proImage} onError={this.addDefaultSrc} alt="Profile image" />
+                                <p><img className="img-responsive people-image" src={proImage} onError={this.addDefaultSrc} alt="Profile image" /></p>
                             </div>
                             <div className="col-md-6 col-sm-7 col-xs-7 people-info-section">
                                 <p className="people-name capitalize-name"><b>{people.person_first_name + " " + people.person_last_name}</b></p>
@@ -94,10 +94,10 @@ var ManagePeople = React.createClass({
                                 <p><b>Case ID: </b>{people.person_code}</p>
                                 <p className="text-justify"><b>Short Bio: </b>{people.notes}</p>
                             </div>
-                            <div className="col-md-12">
-                                <br /><button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#editPeopleModal" onClick={this.setEditPeople.bind(this, people)}>Edit Personal Info</button>
+                            <div className="col-md-12 col-sm-12 col-xs-12">
+                                <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#editPeopleModal" onClick={this.setEditPeople.bind(this, people)}>Edit Personal Info</button>
                                 <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#addItemModal" onClick={this.setAddItem.bind(this, people)}>Add Item</button>
-                                <button className="btn btn-default btn-sm" data-toggle="collapse" data-target={"#item-table-" + index}>Items List</button><br />
+                                <button className="btn btn-default btn-sm" data-toggle="collapse" data-target={"#item-table-" + index}>Items List</button>
                                 <div id={"item-table-" + index} className="collapse item-table">
                                     {itemTable}
                                 </div>
@@ -108,7 +108,7 @@ var ManagePeople = React.createClass({
             });
         } else {
             return (
-                <div>
+                <div className="no-result">
                     No People
                 </div>
             );

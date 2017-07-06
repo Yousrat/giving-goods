@@ -31,6 +31,14 @@
     overflow-x: scroll;
 }
 
+.no-result{
+    justify-content: center;
+    padding: 10px;
+    font-family: 'Podkova', serif;
+    font-size: 20px;
+    color: #db7093;
+}
+
 #about-us h2, 
 #contact-us h2, 
 #login h2 {
