@@ -109,9 +109,25 @@ var Profile = React.createClass({
     },
     renderWarning: function () {
         return (
-            <div className="container" id="login-warning">
-                Please Login
-                <button><Link to="/shelter">Login</Link></button>
+            <div className="container text-center login-warning">
+                <Link to="/shelter">
+                    <button type="button" className="btn btn-default">
+                        Please Login
+                    </button>
+                </Link>
+            </div>
+        );
+    },
+    renderSuspendedPanel: function () {
+        helpers.default.logoutUser();
+        return (
+            <div className="container text-center login-warning">
+                <p>Your account has been suspended.</p>
+                <Link to="/#contact-us">
+                    <button type="button" className="btn btn-default">
+                        Contact us
+                    </button>
+                </Link>
             </div>
         );
     },
@@ -123,7 +139,7 @@ var Profile = React.createClass({
                 <AdminNavTab />
                 <div className="tab-content">
                     <MyProfile myInfo={this.state.loggedInUser} />
-                    <AddUser resetUsers={this.resetUsers}/>
+                    <AddUser resetUsers={this.resetUsers} />
                     <ManageUsers usersList={this.state.allUsers} myData={this.state.loggedInUser} />
                 </div>
             </div>
@@ -155,6 +171,8 @@ var Profile = React.createClass({
                 return this.renderAdminPanel();
             } else if (this.state.loggedInUser.privilege === 2 && this.state.loggedInUser.role === "shelter") {
                 return this.renderShelterPanel();
+            } else if (this.state.loggedInUser.privilege === 3) {
+                return this.renderSuspendedPanel();
             }
         }
         else {

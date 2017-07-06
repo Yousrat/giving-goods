@@ -51,9 +51,13 @@
 #login-container,
 #admin-container,
 #shelter-container,
-#login-warning {
+.login-warning {
     padding-top: 50px;
     min-height: 85vh;
+}
+
+.login-warning {
+    justify-content: center;
 }
 
 
