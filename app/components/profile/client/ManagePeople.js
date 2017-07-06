@@ -82,20 +82,6 @@ var ManagePeople = React.createClass({
                     proImage = "https://i.stack.imgur.com/WmvM0.png";
                 }
                 return (
-<<<<<<< HEAD
-                    <div className="row people-block" key={index}>
-                        <div className="col-md-5">
-                            <p className="people-name capitalize-name"><b>{people.person_first_name + " " + people.person_last_name}</b></p>
-                            <p><b>Gender: </b>{people.gender}</p>
-                            <p><b>Age Group: </b>{people.age_group} </p>
-                            <p><b>Case ID: </b>{people.person_code}</p>
-                            <p><b>Short Bio: </b>{people.notes}</p>
-                            <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#editPeopleModal" onClick={this.setEditPeople.bind(this, people)}>Edit Personal Info</button>
-                            <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#addItemModal" onClick={this.setAddItem.bind(this, people)}>Add Item</button>
-                        </div>
-                        <div className="col-md-7" >
-                            {itemTable}
-=======
                     <div className="col-md-6" key={index}>
                         <div className="manage-people-block clearfix">
                             <div className="col-md-6 col-sm-5 col-xs-5 people-image-section">
@@ -116,7 +102,6 @@ var ManagePeople = React.createClass({
                                     {itemTable}
                                 </div>
                             </div>
->>>>>>> 2f89ccae8370ad9bc15c0589d3f1d1eea49981ce
                         </div>
                     </div>
                 );
