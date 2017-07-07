@@ -210,6 +210,16 @@ div #login .panel-default {
     overflow-y: scroll;
 }
 
+#personModal th:first-child {
+    width: 20%;
+}
+#personModal th:last-child {
+    width: 70%;
+}
+#personModal .table>tbody>tr>td::first-letter {
+  text-transform: uppercase;
+}
+
 
 /*Admin Section & Shelter Section*/
 
