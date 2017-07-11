@@ -1,15 +1,19 @@
 # Giving Goods
 
-This application 
+This Web application connects potential donors to caseworkers’ housing insecure and homeless clients. The app displays individual client’s item needs.
 
 ## Table of Contents
 
+- [Website](#website)
 - [Technologies used](#technologies-used)
 - [Dependencies](#dependencies)
 - [Developers](#developers)
 - [To Install on local machine](#to-install-on-local-machine)
 - [Screenshots](#screenshots)
 - [Acknowledgements](#acknowledgements)
+
+## Website
+[http://giving-goods.herokuapp.com/](http://giving-goods.herokuapp.com/)
 
 ## Technologies used
 * MERN stack (MongoDB, Express, React, NodeJS)
