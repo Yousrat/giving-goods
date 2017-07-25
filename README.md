@@ -1,6 +1,5 @@
 # Giving Goods
-UC San Diego Project 3: MERN stack Web application connects potential donors to caseworkers’ housing insecure and homeless clients.
-
+This Web application connects potential donors to caseworkers’ housing insecure and homeless clients. The app displays individual client’s item needs.
 ## Table of Contents
 
 - [Website](#website)
