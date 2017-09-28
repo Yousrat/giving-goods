@@ -46,6 +46,16 @@
     font-weight: 600;
 }
 
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover{
+    background-color: #333;
+    border-color: #333;
+}
+
 /* Parent Container*/
 
 #main-container {
@@ -220,6 +230,11 @@ div #login .panel-default {
   text-transform: uppercase;
 }
 
+.contact-address span:after,
+.contact-address span:before{
+    content:"\00a0\00a0\00a0\00a0\00a0";
+    text-decoration:line-through;
+}
 
 /*Admin Section & Shelter Section*/
 

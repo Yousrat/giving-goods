@@ -3,6 +3,8 @@ var helper = require("./../../../utils/helper");
 var EditPeopleModal = require("./EditPeopleModal");
 var AddItemModal = require("./AddItemModal");
 var EditItemModal = require("./EditItemModal");
+import { Pagination } from 'react-bootstrap';
+
 
 var ManagePeople = React.createClass({
     getInitialState: function () {
@@ -10,11 +12,18 @@ var ManagePeople = React.createClass({
             myPeopleList: this.props.peopleList,
             currentPeople: [],
             currentPeopleAddItem: [],
-            currentItemUpdate: []
+            currentItemUpdate: [],
+            currentPage: 1,
+            itemsPerPage: 12
         }
     },
     componentWillReceiveProps: function (nextProps) {
         this.setState({ myPeopleList: nextProps.peopleList });
+    },
+    handleSelect(eventKey) {
+        this.setState({
+            currentPage: eventKey
+        });
     },
     setEditPeople: function (people) {
         document.getElementById("edit-people-form").reset();
@@ -31,8 +40,13 @@ var ManagePeople = React.createClass({
         e.target.src = '/assets/images/defaultProImage.png'
     },
     renderMyPeople: function () {
+        const { myPeopleList, currentPage, itemsPerPage } = this.state;
+        const indexOfLastTodo = currentPage * itemsPerPage;
+        const indexOfFirstTodo = indexOfLastTodo - itemsPerPage;
+        const currentTodos = myPeopleList.slice(indexOfFirstTodo, indexOfLastTodo);
+
         if (this.state.myPeopleList.length !== 0) {
-            return this.state.myPeopleList.map((people, index) => {
+            return currentTodos.map((people, index) => {
                 var itemTable = <div className="no-result">No Items</div>
                 if (people.items.length !== 0) {
                     var itemRow = people.items.map(function (item, i) {
@@ -118,10 +132,27 @@ var ManagePeople = React.createClass({
         this.setState({ myPeopleList: newData });
     },
     render: function () {
+        var totalPages = Math.ceil(this.state.myPeopleList.length / this.state.itemsPerPage);
+
         return (
             <div id="manage-people" className="tab-pane fade">
                 <div className="row">
                     {this.renderMyPeople()}
+                </div>
+                <div className="row">
+                    <div className="pull-right">
+                        <Pagination
+                            prev
+                            next
+                            first
+                            last
+                            ellipsis
+                            boundaryLinks
+                            items={totalPages}
+                            maxButtons={5}
+                            activePage={this.state.currentPage}
+                            onSelect={this.handleSelect} />
+                    </div>
                 </div>
                 <EditPeopleModal peopleData={this.state.currentPeople} resetPeople={this.resetMyPeople} />
                 <AddItemModal peopleData={this.state.currentPeopleAddItem} resetPeople={this.resetMyPeople} />

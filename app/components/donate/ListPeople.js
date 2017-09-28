@@ -1,6 +1,7 @@
 var React = require("react");
 var NotificationSystem = require("react-notification-system");
 var helper = require("./../../utils/helper");
+import { Pagination } from 'react-bootstrap';
 
 var ListPeople = React.createClass({
     _notificationSystem: null,
@@ -9,7 +10,9 @@ var ListPeople = React.createClass({
             allPeopleList: [],
             currentPerson: [],
             currentPersonItems: [],
-            contactCurrentShelter: null
+            contactCurrentShelter: null,
+            currentPage: 1,
+            itemsPerPage: 12
         }
     },
     componentDidMount: function () {
@@ -17,6 +20,11 @@ var ListPeople = React.createClass({
     },
     componentWillReceiveProps: function (nextProps) {
         this.setState({ allPeopleList: nextProps.peopleList });
+    },
+    handleSelect(eventKey) {
+        this.setState({
+            currentPage: eventKey
+        });
     },
     handleChange: function (event) {
         var newState = {};
@@ -29,7 +37,7 @@ var ListPeople = React.createClass({
             donorEmail: this.state.donorEmail,
             donorSubject: this.state.donorSubject,
             donorMessage: this.state.donorMessage,
-            shelterMail: this.state.contactCurrentShelter
+            shelterMail: this.state.contactCurrentShelter.emailId
         }).then((mailStatus) => {
             if (mailStatus.data) {
                 this._notificationSystem.addNotification({
@@ -51,7 +59,7 @@ var ListPeople = React.createClass({
         this.setState({ currentPersonItems: person.items });
     },
     contactShelter: function (shelter) {
-        this.setState({ contactCurrentShelter: shelter.emailId });
+        this.setState({ contactCurrentShelter: shelter });
     },
     renderPersonModal: function () {
         var itemRows = "";
@@ -78,7 +86,7 @@ var ListPeople = React.createClass({
                             <p className="text-capitalize">{this.state.currentPerson.gender + ", " + this.state.currentPerson.age_group + " years old"}</p>
                         </div>
                         <div className="modal-body">
-                            <p>{this.state.currentPerson.notes}</p><br/>
+                            <p>{this.state.currentPerson.notes}</p><br />
                             <table className="table table-hover">
                                 <thead>
                                     <tr>
@@ -102,7 +110,14 @@ var ListPeople = React.createClass({
     },
     renderContactShelterModal: function () {
         var shelterForm = "";
+        var shelterContact = "";
         if (this.state.contactCurrentShelter !== null) {
+            shelterContact =
+                <div className="text-center contact-address">
+                    <p><b>Address : </b>{this.state.contactCurrentShelter.address}</p>
+                    <p><b>Phone : </b>000-000-0000</p>
+                    <p><span> OR </span></p>
+                </div>
             shelterForm =
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -126,6 +141,7 @@ var ListPeople = React.createClass({
                             <h4 className="modal-title">Contact Shelter</h4>
                         </div>
                         <div className="modal-body">
+                            {shelterContact}
                             {shelterForm}
                         </div>
                     </div>
@@ -134,8 +150,13 @@ var ListPeople = React.createClass({
         );
     },
     renderPeople: function () {
+        const { allPeopleList, currentPage, itemsPerPage } = this.state;
+        const indexOfLastTodo = currentPage * itemsPerPage;
+        const indexOfFirstTodo = indexOfLastTodo - itemsPerPage;
+        const currentTodos = allPeopleList.slice(indexOfFirstTodo, indexOfLastTodo);
+
         if (this.state.allPeopleList.length !== 0) {
-            return this.state.allPeopleList.map((person, index) => {
+            return currentTodos.map((person, index) => {
                 if (person.items.length) {
                     return (
                         <div className="col-md-3 col-sm-4" key={index}>
@@ -144,9 +165,9 @@ var ListPeople = React.createClass({
                                 <p><b>Location: </b>{person.shelter_id.location}</p>
                                 <p><b>Age: </b>{person.age_group}</p>
                                 <p><b>Gender: </b>{person.gender}</p>
-                                
+
                                 <p><button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#personModal" onClick={this.setPersonItems.bind(this, person)}>More</button>
-                                <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button></p>
+                                    <button type="button" className="btn btn-default btn-sm" data-toggle="modal" data-target="#contactModal" onClick={this.contactShelter.bind(this, person.shelter_id)}>Contact Shelter</button></p>
 
                                 <p><b>Bio: </b>{person.notes}</p>
                             </div>
@@ -163,10 +184,43 @@ var ListPeople = React.createClass({
         }
     },
     render: function () {
+        var totalPages = Math.ceil(this.state.allPeopleList.length / this.state.itemsPerPage);
         return (
             <div>
                 <NotificationSystem ref="notificationSystem" />
-                {this.renderPeople()}
+                <div className="row">
+                    <div className="pull-right">
+                        <Pagination
+                            prev
+                            next
+                            first
+                            last
+                            ellipsis
+                            boundaryLinks
+                            items={totalPages}
+                            maxButtons={5}
+                            activePage={this.state.currentPage}
+                            onSelect={this.handleSelect} />
+                    </div>
+                </div>
+                <div className="row">
+                    {this.renderPeople()}
+                </div>
+                <div className="row">
+                    <div className="pull-right">
+                        <Pagination
+                            prev
+                            next
+                            first
+                            last
+                            ellipsis
+                            boundaryLinks
+                            items={totalPages}
+                            maxButtons={5}
+                            activePage={this.state.currentPage}
+                            onSelect={this.handleSelect} />
+                    </div>
+                </div>
                 {this.renderPersonModal()}
                 {this.renderContactShelterModal()}
             </div>

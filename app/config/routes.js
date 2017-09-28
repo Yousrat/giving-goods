@@ -10,10 +10,10 @@ import Donate from "./../components/donate/Donate";
 const routes = (
   <Router history={browserHistory} onUpdate={hashLinkScroll}>
     <Route path="/" component={Main}>
-      <Route path="home" component={Home} />
-      <Route path="shelter" component={Shelter} />
-      <Route path="profile" component={Profile} />
-      <Route path="donate" component={Donate} />
+      <Route path="/home" component={Home} />
+      <Route path="/shelter" component={Shelter} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/donate" component={Donate} />
       <IndexRoute component={Home} />
     </Route>
   </Router>
