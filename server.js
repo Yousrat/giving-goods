@@ -6,9 +6,10 @@ var bodyParser = require("body-parser");
 var passport = require('passport');
 var session = require('express-session');
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 4000;
 mongoose.Promise = bluebird;
 var app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));

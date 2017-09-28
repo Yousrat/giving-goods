@@ -1,5 +1,7 @@
 # Giving Goods
+
 This Web application connects potential donors to caseworkers’ housing insecure and homeless clients. The app displays individual client’s item needs.
+
 ## Table of Contents
 
 - [Website](#website)
