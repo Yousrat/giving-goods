@@ -24,7 +24,7 @@ var Navbar = React.createClass({
                                 <li><Link to="/donate"><span className="glyphicon glyphicon-heart"></span> Donate Goods</Link></li>
                                 <li><Link to="#about-us"><span className="glyphicon glyphicon-info-sign"></span> About Us</Link></li>
                                 <li><Link to="#contact-us"><span className="glyphicon glyphicon-envelope"></span> Contact Us</Link></li>
-                                <li><Link to="/shelter"><span className="glyphicon glyphicon-log-in"></span> Shelter</Link></li>
+                                <li><Link to="/shelter"><span className="glyphicon glyphicon-log-in"></span> My account</Link></li>
                             </ul>
                         </div>
                     </div>

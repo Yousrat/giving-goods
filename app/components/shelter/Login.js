@@ -36,7 +36,7 @@ var Login = React.createClass({
             <div className="row" id="login">
                 <NotificationSystem ref="notificationSystem" />
                 <div className="col-md-6 col-md-offset-3">
-                    <h2>Shelter Login</h2>
+                    <h2>Login</h2>
                     <div className=" panel panel-default">
                         <div className="panel-body">
                             <form onSubmit={this.handleSubmit}>
