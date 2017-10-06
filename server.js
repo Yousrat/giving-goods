@@ -21,20 +21,20 @@ app.use(passport.session());
 var routes = require("./routes/routes");
 app.use("/", routes);
 
-// var db = "mongodb://heroku_qwcxn1pp:2218m91ki7ieu9vsnkcj35dhma@ds139879.mlab.com:39879/heroku_qwcxn1pp" ;
+// var mongoDB = "mongodb://heroku_qwcxn1pp:2218m91ki7ieu9vsnkcj35dhma@ds139879.mlab.com:39879/heroku_qwcxn1pp" ;
 
-var db = "mongodb://localhost/givingGoodsApp";
+var mongoDB = "mongodb://localhost/givingGoodsApp";
 
-mongoose.connect(db, function (error) {
-  if (error) {
-    console.error(error);
-  }
-  else {
-    console.log("mongoose connection is successful");
-  }
+mongoose.connect(mongoDB, {
+  useMongoClient: true
 });
+
+//Get the default connection
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 // Start the server
 app.listen(PORT, function () {
-  console.log("Now listening on port %s! Visit localhost:%s in your browser.", PORT, PORT);
+  console.log("Visit localhost:%s in your browser.", PORT);
 });
