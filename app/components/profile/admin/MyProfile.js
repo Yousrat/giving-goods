@@ -1,9 +1,10 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var helper = require("./../../../utils/helper");
 var NotificationSystem = require('react-notification-system');
 
 
-var MyProfile = React.createClass({
+var MyProfile = createReactClass({
     _notificationSystem: null,
     getInitialState: function () {
         return {

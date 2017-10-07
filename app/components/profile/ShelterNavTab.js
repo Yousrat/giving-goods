@@ -1,7 +1,8 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var Link = require("react-router").Link;
 
-var ShelterNavTab = React.createClass({
+var ShelterNavTab = createReactClass({
     render: function () {
         return (
             <ul className="nav nav-tabs">

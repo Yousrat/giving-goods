@@ -1,8 +1,9 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var helper = require("./../../../utils/helper");
 var NotificationSystem = require('react-notification-system');
 
-var ShelterProfile = React.createClass({
+var ShelterProfile = createReactClass({
     _notificationSystem: null,
     getInitialState: function () {
         return {

@@ -1,4 +1,5 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var Link = require("react-router").Link;
 var helpers = require("./../../utils/helper");
 import AdminNavTab from "./AdminNavTab";
@@ -11,7 +12,7 @@ import AddPeople from "./client/AddPeople";
 import ManagePeople from "./client/ManagePeople";
 import { browserHistory } from 'react-router';
 
-var Profile = React.createClass({
+var Profile = createReactClass({
     getInitialState: function () {
         return {
             loggedInUser: "",

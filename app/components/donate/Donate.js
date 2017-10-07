@@ -1,10 +1,11 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var helper = require("./../../utils/helper");
 
 var ListPeople = require("./ListPeople");
 var Search = require("./Search");
 
-var Donate = React.createClass({
+var Donate = createReactClass({
     getInitialState: function () {
         return {
             peopleList: [],

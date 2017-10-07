@@ -1,7 +1,8 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var Link = require("react-router").Link;
 
-var AdminNavTab = React.createClass({
+var AdminNavTab = createReactClass({
     render: function () {
         return (
             <ul className="nav nav-tabs">

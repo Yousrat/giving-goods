@@ -1,5 +1,6 @@
 var React = require("react");
-var AboutUs = React.createClass({
+var createReactClass = require("create-react-class");
+var AboutUs = createReactClass({
     render: function () {
         return (
             <div id="about-us" className="row">

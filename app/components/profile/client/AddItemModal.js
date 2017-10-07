@@ -1,8 +1,9 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var NotificationSystem = require('react-notification-system');
 var helper = require("./../../../utils/helper");
 
-var AddItemModal = React.createClass({
+var AddItemModal = createReactClass({
     _notificationSystem: null,
     getInitialState: function () {
         return {

@@ -1,8 +1,9 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var NotificationSystem = require('react-notification-system');
 var helper = require("./../../../utils/helper");
 
-var AddUser = React.createClass({
+var AddUser = createReactClass({
     _notificationSystem: null,
     componentDidMount: function () {
         this._notificationSystem = this.refs.notificationSystem;

@@ -1,9 +1,10 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var helpers = require("./../../utils/helper");
 import Login from "./Login";
 import { browserHistory } from 'react-router';
 
-var Shelter = React.createClass({
+var Shelter = createReactClass({
     getInitialState: function () {
         return {
             ifLoggedIn: undefined

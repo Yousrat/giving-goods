@@ -1,9 +1,10 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var NotificationSystem = require('react-notification-system');
 var helpers = require("./../../utils/helper");
 import { browserHistory } from 'react-router';
 
-var Login = React.createClass({
+var Login = createReactClass({
     _notificationSystem: null,
     componentDidMount: function () {
         this._notificationSystem = this.refs.notificationSystem;

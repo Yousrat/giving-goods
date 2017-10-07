@@ -1,8 +1,9 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var helpers = require("./../../utils/helper");
 var NotificationSystem = require('react-notification-system');
 
-var ContactUs = React.createClass({
+var ContactUs = createReactClass({
     _notificationSystem: null,
     handleChange: function (event) {
         var newState = {};

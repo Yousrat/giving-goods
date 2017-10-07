@@ -1,4 +1,5 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var helper = require("./../../../utils/helper");
 var EditPeopleModal = require("./EditPeopleModal");
 var AddItemModal = require("./AddItemModal");
@@ -6,7 +7,7 @@ var EditItemModal = require("./EditItemModal");
 import { Pagination } from 'react-bootstrap';
 
 
-var ManagePeople = React.createClass({
+var ManagePeople = createReactClass({
     getInitialState: function () {
         return {
             myPeopleList: this.props.peopleList,

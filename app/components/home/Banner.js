@@ -1,7 +1,8 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var Link = require("react-router").Link;
 
-var Banner = React.createClass({
+var Banner = createReactClass({
     render: function () {
         return (
             <div className="row" id="banner">

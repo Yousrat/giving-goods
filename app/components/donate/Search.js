@@ -1,7 +1,8 @@
 var React = require("react");
+var createReactClass = require("create-react-class");
 var helper = require("./../../utils/helper");
 
-var Search = React.createClass({
+var Search = createReactClass({
     getInitialState: function () {
         return {
             item: "",

@@ -1,5 +1,6 @@
 var React = require("react");
-var Footer = React.createClass({
+var createReactClass = require("create-react-class");
+var Footer = createReactClass({
     render: function () {
         return (
             <div className="row text-center footer">
