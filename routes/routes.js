@@ -8,11 +8,11 @@ var User = require("../models/User");
 var apiRoutes = require("./apiRoutes");
 var router = new express.Router();
 
-let transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: '*******',
-    pass: '*******'
+    user: '',
+    pass: ''
   }
 });
 

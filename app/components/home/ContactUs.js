@@ -21,7 +21,6 @@ var ContactUs = createReactClass({
             clientSubject: this.state.clientSubject,
             clientMessage: this.state.clientMessage
         }).then((mailStatus) => {
-            console.log(mailStatus);
             this._notificationSystem.addNotification({
                 message: 'Message sent, we will get back to you shortly',
                 level: 'success',
