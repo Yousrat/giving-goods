@@ -35,6 +35,7 @@ NPM packages
 1. `passport` (Authentication for Node.js.)
 1. `passport-local` (Local username and password authentication strategy for Passport.)
 1. `react` (JavaScript library for building user interfaces.)
+1. `create-react-class` (A drop-in replacement for React.createClass)
 1. `react-dom` (React package for working with the DOM.)
 1. `react-notification-system` (A React Notification System fully customized)
 1. `react-router` (Declarative routing for React)
