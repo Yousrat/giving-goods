@@ -116,7 +116,7 @@ var ListPeople = createReactClass({
             shelterContact =
                 <div className="text-center contact-address">
                     <p><b>Address : </b>{this.state.contactCurrentShelter.address}</p>
-                    <p><b>Phone : </b>000-000-0000</p>
+                    <p><b>Phone : </b>{this.state.contactCurrentShelter.phone}</p>
                     <p><span> OR </span></p>
                 </div>
             shelterForm =

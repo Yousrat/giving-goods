@@ -18,6 +18,7 @@ var userSchema = new Schema({
     },
     name: String,
     location: String,
+    phone: String,
     address: String
 });
 

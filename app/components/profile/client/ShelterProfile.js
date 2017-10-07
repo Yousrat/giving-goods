@@ -11,6 +11,7 @@ var ShelterProfile = createReactClass({
             role: this.props.shelterInfo.role,
             emailId: this.props.shelterInfo.emailId,
             address: this.props.shelterInfo.address,
+            phone: this.props.shelterInfo.phone,
             location: this.props.shelterInfo.location
         }
     },
@@ -28,13 +29,15 @@ var ShelterProfile = createReactClass({
         helper.default.updateMyInfo({
             name: this.state.newShelterName,
             location: this.state.newShelterLocation,
-            address: this.state.newShelterAddress
+            address: this.state.newShelterAddress,
+            phone: this.state.newShelterPhone
         }).then((user) => {
             helper.default.getMyInfo().then((userUpdated) => {
                 this.setState({
                     name: userUpdated.data.name,
                     location: userUpdated.data.location,
-                    address: userUpdated.data.address
+                    address: userUpdated.data.address,
+                    phone: userUpdated.data.phone,
                 });
                 this._notificationSystem.addNotification({
                     message: 'New Information Saved',
@@ -75,6 +78,10 @@ var ShelterProfile = createReactClass({
                                     <label htmlFor="newShelterAddress">Address</label>
                                     <textarea defaultValue={this.state.address} className="form-control" id="newShelterAddress" name="newShelterAddress" onChange={this.handleChange} rows="3" required />
                                 </div>
+                                <div className="form-group">
+                                    <label htmlFor="newShelterPhone">Phone</label>
+                                    <input type="text" defaultValue={this.state.phone} className="form-control" id="newShelterPhone" name="newShelterPhone" onChange={this.handleChange} required />
+                                </div>
                                 <button type="submit" className="btn btn-default btn-sm">Save</button>
                             </form>
                         </div>
@@ -110,6 +117,10 @@ var ShelterProfile = createReactClass({
                                 <tr>
                                     <td><b>Address:</b></td>
                                     <td>{this.state.address}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Phone:</b></td>
+                                    <td>{this.state.phone}</td>
                                 </tr>
                                 <tr>
                                     <td><b>Location:</b></td>

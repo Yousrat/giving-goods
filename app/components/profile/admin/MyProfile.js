@@ -12,6 +12,7 @@ var MyProfile = createReactClass({
             role: this.props.myInfo.role,
             emailId: this.props.myInfo.emailId,
             address: this.props.myInfo.address,
+            phone: this.props.myInfo.phone,
             location: this.props.myInfo.location
         }
     },
@@ -29,13 +30,15 @@ var MyProfile = createReactClass({
         helper.default.updateMyInfo({
             name: this.state.newName,
             location: this.state.newLocation,
-            address: this.state.newAddress
+            address: this.state.newAddress,
+            phone: this.state.newPhone
         }).then((user) => {
             helper.default.getMyInfo().then((userUpdated) => {
                 this.setState({
                     name: userUpdated.data.name,
                     location: userUpdated.data.location,
-                    address: userUpdated.data.address
+                    address: userUpdated.data.address,
+                    phone: userUpdated.data.phone
                 });
                 this._notificationSystem.addNotification({
                     message: 'New Information Saved',
@@ -69,6 +72,11 @@ var MyProfile = createReactClass({
                                 <div className="form-group">
                                     <label htmlFor="newAddress">Address</label>
                                     <textarea defaultValue={this.state.address} className="form-control" id="newAddress" onChange={this.handleChange} rows="3" required />
+
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="newPhone">Phone</label>
+                                    <input type="text" defaultValue={this.state.phone} className="form-control" id="newPhone" onChange={this.handleChange} required />
 
                                 </div>
                                 <button type="submit" className="btn btn-default btn-sm">Save</button>
@@ -106,6 +114,10 @@ var MyProfile = createReactClass({
                                 <tr>
                                     <td><b>Address:</b></td>
                                     <td>{this.state.address}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Phone:</b></td>
+                                    <td>{this.state.phone}</td>
                                 </tr>
                                 <tr>
                                     <td><b>Location:</b></td>

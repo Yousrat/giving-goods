@@ -75,6 +75,7 @@ var ManageUsers = createReactClass({
                                 <p><b>Emaid-id: </b>{user.emailId}</p>
                                 <p><b>Location: </b>{user.location}</p>
                                 <p><b>Address: </b>{user.address}</p>
+                                <p><b>Address: </b>{user.phone}</p>
                             </div>
                         </div>
                     );
@@ -88,6 +89,7 @@ var ManageUsers = createReactClass({
                                 <p><b>Emaid-id: </b>{user.emailId}</p>
                                 <p><b>Location: </b>{user.location}</p>
                                 <p><b>Address: </b>{user.address}</p>
+                                <p><b>Address: </b>{user.phone}</p>
                             </div>
                         </div>
                     );
@@ -101,6 +103,7 @@ var ManageUsers = createReactClass({
                             <p><b>Emaid-id: </b>{user.emailId}</p>
                             <p><b>Location: </b>{user.location}</p>
                             <p><b>Address: </b>{user.address}</p>
+                            <p><b>Address: </b>{user.phone}</p>
                         </div>
                     </div>
                 );
