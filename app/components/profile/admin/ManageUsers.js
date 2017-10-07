@@ -72,10 +72,10 @@ var ManageUsers = createReactClass({
                                 <p className="pull-right"><span className="label label-danger" onClick={this.handleActivate.bind(this, user)}>Activate</span></p>
                                 <p><b>Role: </b>{user.role}</p>
                                 <p className="capitalize-name"><b>Name: </b>{user.name}</p>
-                                <p><b>Emaid-id: </b>{user.emailId}</p>
+                                <p><b>Emaid-id: </b><a href={"mailto:"+user.emailId}>{user.emailId}</a></p>
                                 <p><b>Location: </b>{user.location}</p>
                                 <p><b>Address: </b>{user.address}</p>
-                                <p><b>Address: </b>{user.phone}</p>
+                                <p><b>Phone: </b>{user.phone}</p>
                             </div>
                         </div>
                     );
@@ -86,10 +86,10 @@ var ManageUsers = createReactClass({
                                 <p className="pull-right"><span className="label label-default" onClick={this.handleSuspend.bind(this, user._id)}>Suspend</span></p>
                                 <p><b>Role: </b>{user.role}</p>
                                 <p className="capitalize-name"><b>Name: </b>{user.name}</p>
-                                <p><b>Emaid-id: </b>{user.emailId}</p>
+                                <p><b>Emaid-id: </b><a href={"mailto:"+user.emailId}>{user.emailId}</a></p>
                                 <p><b>Location: </b>{user.location}</p>
                                 <p><b>Address: </b>{user.address}</p>
-                                <p><b>Address: </b>{user.phone}</p>
+                                <p><b>Phone: </b>{user.phone}</p>
                             </div>
                         </div>
                     );
@@ -100,10 +100,10 @@ var ManageUsers = createReactClass({
                         <div className="people-block" >
                             <p><b>Role: </b>{user.role}</p>
                             <p className="capitalize-name"><b>Name: </b>{user.name}</p>
-                            <p><b>Emaid-id: </b>{user.emailId}</p>
+                            <p><b>Emaid-id: </b><a href={"mailto:"+user.emailId}>{user.emailId}</a></p>
                             <p><b>Location: </b>{user.location}</p>
                             <p><b>Address: </b>{user.address}</p>
-                            <p><b>Address: </b>{user.phone}</p>
+                            <p><b>Phone: </b>{user.phone}</p>
                         </div>
                     </div>
                 );
